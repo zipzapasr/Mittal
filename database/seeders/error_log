@@ -1,0 +1,4 @@
+[13-Nov-2022 14:52:42 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Seeder" not found in /home/ripunaae/public_html/mittal/database/seeders/DatabaseSeeder.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/database/seeders/DatabaseSeeder.php on line 8

@@ -1,0 +1,16 @@
+[04-Nov-2022 19:09:09 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Application" not found in /home/ripunaae/public_html/mittal/bootstrap/app.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/bootstrap/app.php on line 14
+[16-Nov-2022 11:20:47 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Application" not found in /home/ripunaae/public_html/mittal/bootstrap/app.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/bootstrap/app.php on line 14
+[23-Dec-2022 17:04:55 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Application" not found in /home/ripunaae/public_html/mittal/bootstrap/app.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/bootstrap/app.php on line 14
+[24-Dec-2022 17:28:04 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Application" not found in /home/ripunaae/public_html/mittal/bootstrap/app.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/bootstrap/app.php on line 14

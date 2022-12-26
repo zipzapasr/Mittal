@@ -1,0 +1,55 @@
+[08-Sep-2022 23:32:50 America/Chicago] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 7.3.33. in /home2/ripunaae/mittal.ripungupta.com/vendor/composer/platform_check.php on line 24
+[08-Sep-2022 23:32:55 America/Chicago] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 7.3.33. in /home2/ripunaae/mittal.ripungupta.com/vendor/composer/platform_check.php on line 24
+[08-Sep-2022 23:37:24 America/Chicago] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 7.3.33. in /home2/ripunaae/mittal.ripungupta.com/vendor/composer/platform_check.php on line 24
+[23-Sep-2022 23:44:38 America/Chicago] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 7.3.33. in /home2/ripunaae/mittal.ripungupta.com/vendor/composer/platform_check.php on line 24
+[23-Sep-2022 23:46:28 America/Chicago] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 7.3.33. in /home2/ripunaae/mittal.ripungupta.com/vendor/composer/platform_check.php on line 24
+[23-Sep-2022 23:47:43 America/Chicago] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 7.3.33. in /home2/ripunaae/mittal.ripungupta.com/vendor/composer/platform_check.php on line 24
+[23-Sep-2022 23:48:06 America/Chicago] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 7.3.33. in /home2/ripunaae/mittal.ripungupta.com/vendor/composer/platform_check.php on line 24
+[26-Sep-2022 02:55:23 America/Chicago] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 7.3.33. in /home2/ripunaae/mittal.ripungupta.com/vendor/composer/platform_check.php on line 24
+[26-Sep-2022 03:01:29 America/Chicago] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 7.3.33. in /home2/ripunaae/mittal.ripungupta.com/vendor/composer/platform_check.php on line 24
+[03-Nov-2022 16:46:08 Asia/Kolkata] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.25. in /home/ripunaae/public_html/mittal/vendor/composer/platform_check.php on line 24
+[03-Nov-2022 16:47:20 Asia/Kolkata] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.25. in /home/ripunaae/public_html/mittal/vendor/composer/platform_check.php on line 24
+[30-Nov-2022 10:29:48 Asia/Kolkata] PHP Fatal error:  Can't use function return value in write context in /home/ripunaae/public_html/mittal/app/Http/Controllers/LoginController.php on line 86
+[30-Nov-2022 10:31:25 Asia/Kolkata] PHP Fatal error:  Can't use method return value in write context in /home/ripunaae/public_html/mittal/app/Http/Controllers/LoginController.php on line 86
+[02-Dec-2022 10:58:30 Asia/Kolkata] PHP Fatal error:  During class fetch: Uncaught ParseError: syntax error, unexpected token "trait", expecting "," or ";" in /home/ripunaae/public_html/mittal/vendor/laravel/ui/auth-backend/AuthenticatesUsers.php:11
+Stack trace:
+#0 /home/ripunaae/public_html/mittal/vendor/composer/ClassLoader.php(346): Composer\Autoload\includeFile()
+#1 /home/ripunaae/public_html/mittal/app/Http/Controllers/Auth/LoginController.php(9): Composer\Autoload\ClassLoader->loadClass()
+#2 /home/ripunaae/public_html/mittal/vendor/composer/ClassLoader.php(480): include('/home/ripunaae/...')
+#3 /home/ripunaae/public_html/mittal/vendor/composer/ClassLoader.php(346): Composer\Autoload\includeFile()
+#4 [internal function]: Composer\Autoload\ClassLoader->loadClass()
+#5 /home/ripunaae/public_html/mittal/vendor/laravel/framework/src/Illuminate/Routing/Route.php(1091): is_a()
+#6 /home/ripunaae/public_html/mittal/vendor/laravel/framework/src/Illuminate/Routing/Route.php(1030): Illuminate\Routing\Route->controllerMiddleware()
+#7 /home/ripunaae/public_html/mittal/vendor/laravel/framework/src/Illuminate/Routing/Router.php(737): Illuminate\Routing\Route->gatherMiddleware()
+#8 /home/ripunaae/public_html/mittal/vendor/laravel/framework/src/Illuminate/Routing/Router.php(719): Illuminate\Routing\Router->gatherRouteMiddleware()
+#9 /home/ripunaae/public_html/mittal/vendor/laravel/framework/src/Illuminate/Routing/Router.php(703): Illuminate\Routing\Router->runRouteWithinStack()
+#10 /home/ripunaae/public_html/mittal/vendor/laravel/framework/src/Illuminate/Routing/Router.php(667): Illuminate\Routing\Router->runRoute()
+#11 /home/ripunaae/public_html/mittal/vendor/laravel/framework/src/Illuminate/Routing/Router.php(656): Illuminate\Routing\Router->dispatchToRoute()
+#12 /home/ripunaae/public_html/mittal/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(190): Illuminate\Routing\Router->dispatch()
+#13 /home/ripunaae/public_html/mittal/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(141): Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}()
+#14 /home/ripunaae/public_html/mittal/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}()
+#15 /home/ripunaae/public_html/mittal/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle()
+#16 /home/ripunaae/public_html/mittal/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull->handle()
+#17 /home/ripunaae/public_html/mittal/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}()
+#18 /home/ripunaae/public_html/mittal/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(40): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle()
+#19 /home/ripunaae/public_html/mittal/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\Foundation\Http\Middleware\TrimStrings->handle()
+#20 /home/ripunaae/public_html/mittal/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}()
+#21 /home/ripunaae/public_html/mittal/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\Foundation\Http\Middleware\ValidatePostSize->handle()
+#22 /home/ripunaae/public_html/mittal/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(86): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}()
+#23 /home/ripunaae/public_html/mittal/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance->handle()
+#24 /home/ripunaae/public_html/mittal/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(49): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}()
+#25 /home/ripunaae/public_html/mittal/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\Http\Middleware\HandleCors->handle()
+#26 /home/ripunaae/public_html/mittal/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}()
+#27 /home/ripunaae/public_html/mittal/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\Http\Middleware\TrustProxies->handle()
+#28 /home/ripunaae/public_html/mittal/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(116): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}()
+#29 /home/ripunaae/public_html/mittal/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(165): Illuminate\Pipeline\Pipeline->then()
+#30 /home/ripunaae/public_html/mittal/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(134): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter()
+#31 /home/ripunaae/public_html/mittal/public/index.php(52): Illuminate\Foundation\Http\Kernel->handle()
+#32 {main} in /home/ripunaae/public_html/mittal/app/Http/Controllers/Auth/LoginController.php on line 9
+[15-Dec-2022 12:50:08 Asia/Kolkata] PHP Fatal error:  Cannot redeclare App\Http\Controllers\ReportsController::filterSiteLedger() in /home/ripunaae/public_html/mittal/app/Http/Controllers/ReportsController.php on line 138
+[15-Dec-2022 12:50:42 Asia/Kolkata] PHP Fatal error:  Cannot redeclare App\Http\Controllers\ReportsController::filterSiteLedger() in /home/ripunaae/public_html/mittal/app/Http/Controllers/ReportsController.php on line 138
+[15-Dec-2022 16:34:10 Asia/Kolkata] PHP Fatal error:  Unparenthesized `a ? b : c ? d : e` is not supported. Use either `(a ? b : c) ? d : e` or `a ? b : (c ? d : e)` in /home/ripunaae/public_html/mittal/storage/framework/views/4822ccf85c9c5deaf99f822aac62a69097121f59.php on line 59
+[15-Dec-2022 16:34:32 Asia/Kolkata] PHP Fatal error:  Unparenthesized `a ? b : c ? d : e` is not supported. Use either `(a ? b : c) ? d : e` or `a ? b : (c ? d : e)` in /home/ripunaae/public_html/mittal/storage/framework/views/4822ccf85c9c5deaf99f822aac62a69097121f59.php on line 59
+[22-Dec-2022 15:05:35 Asia/Kolkata] PHP Fatal error:  Namespace declaration statement has to be the very first statement or after any declare call in the script in /home/ripunaae/public_html/mittal/routes/web.php on line 4
+[24-Dec-2022 10:57:26 Asia/Kolkata] PHP Fatal error:  Namespace declaration statement has to be the very first statement or after any declare call in the script in /home/ripunaae/public_html/mittal/app/Http/Controllers/EmployeeHomeController.php on line 5
+[24-Dec-2022 10:57:55 Asia/Kolkata] PHP Fatal error:  Namespace declaration statement has to be the very first statement or after any declare call in the script in /home/ripunaae/public_html/mittal/app/Http/Controllers/EmployeeHomeController.php on line 2
