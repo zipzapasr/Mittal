@@ -17,26 +17,24 @@ class UnitController extends Controller
         return View('Unit.list' , compact('unit'));
     }
     
-    public function changeStatus($unitId){
-        $unit = Unit::where('id' , $unitId)->get();
-        if( $unit->count() > 0 ){
-            if($unit[0]['status'] == 0){
-                Unit::where('id' , $unitId)->update([ 'status' => 1]);
-            }else{
-                Unit::where('id' , $unitId)->update(['status' => 0]);
-            }
+    public function changeStatus(Unit $unit){
+        // dd($unit);
+        if($unit['status'] == 0){
+            $unit->update([ 'status' => 1]);
+        }else{
+            $unit->update(['status' => 0]);
         }
-        Session::flash('message' , 'Unit status successfully');
+        Session::flash('message' , 'Unit status updated successfully');
         return back();
     }
     
-    public function editunit($unitId){
-        $unit = Unit::where('id' , $unitId)->first();
+    public function editunit(Unit $unit){
         return View('Unit.edit' , compact('unit'));
     }
     
-    public function updateunit( Request $request ){
-        Unit::where(['id' => $request->id])->update(['title' => $request->title]);
+    public function updateunit(Request $request ){
+        $unit = Unit::findOrFail($request->id);
+        $unit->update(['title' => $request->title]);
         Session::flash('message' , 'Unit Updated Successfully');
         return back();
     }

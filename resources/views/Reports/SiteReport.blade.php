@@ -1,5 +1,11 @@
 @extends('layouts.app')
 
+<style>
+    td,th, tr {
+        text-align: center;
+    }
+</style>
+
 @section('content')
 
 <div class="row ">

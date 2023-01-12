@@ -21,26 +21,23 @@ class FieldTypeController extends Controller
         return View('Fields.list' , compact('field_types'));
     }
 
-    public function changeStatus($field_type_Id){
-        $field_type = FieldType::where('id' , $field_type_Id)->get();
-        if( $field_type->count() > 0 ){
-            if($field_type[0]['status'] == 0){
-                FieldType::where('id' , $field_type_Id)->update([ 'status' => 1]);
-            }else{
-                FieldType::where('id' , $field_type_Id)->update(['status' => 0]);
-            }
+    public function changeStatus(FieldType $field_type){
+        if($field_type['status'] == 0){
+            $field_type->update([ 'status' => 1]);
+        }else{
+            $field_type->update(['status' => 0]);
         }
         Session::flash('message' , 'FieldType status changed successfully');
         return back();
     }
     
-    public function editFieldType($field_type_Id){
-        $field_type = FieldType::where('id' , $field_type_Id)->first();
+    public function editFieldType(FieldType $field_type){
         return View('Fields.edit' , compact('field_type'));
     }
     
     public function updateFieldType( Request $request ){
-        FieldType::where(['id' => $request->id])->update(['title' => $request->title]);
+        $field_type = FieldType::findOrFail($request->id);
+        $field_type->update(['title' => $request->title]);
         Session::flash('message' , 'FieldType Updated Successfully');
         return back();
     }
@@ -53,9 +50,7 @@ class FieldTypeController extends Controller
         $field_data = [
             'title' => $request->title
         ];
-        $field_type = FieldType::create($field_data);
-        //dd($field_type);
-
+        FieldType::create($field_data);
         Session::flash('message' , 'FieldType added successfully');
         return back();
     }

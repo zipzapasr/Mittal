@@ -76,18 +76,22 @@
                     <div class="table-responsive">
                         <table class="table bayer_table m-0">
                             <tbody>
-                                @foreach($sitesData as $site_id => $qty)
-                                    @if($qty != 0)
+                                @foreach($sitesData as $site_id => $arr)
+                                    @if($arr['received'] != 0 || $arr['sent'] != 0)
                                         <tr class="mt-1 mb-1">
                                             <td>
                                                 <div class="payment_gatway row">
                                                 {{--"list/site/{{ $entries[0]->getSite->id }}"--}}
                                                 {{--{{ $entries[0]->getSite->serial_no }}--}}
-                                                    <h4 class="byer_name  f_s_16 f_w_700 color_theme col-md-4"><a href=> {{ $sites[$site_id]->site_name }}</a></h4>
-                                                    <h5 class="col-md-4">{{$qty}}</h5>
+                                                    <h4 class="byer_name  f_s_16 f_w_700 color_theme col-md-4"><a href=""> {{ $sites[$site_id]->site_name }}</a></h4>
+                                                    <h5 class="col-md-4">
+                                                        <p>Received Diff: {{$arr['received']}}</p>
+                                                        <p>Sent Diff: {{$arr['sent']}}</p>
+                                                    </h5>
                                                     {{-- <h5 class="col-md-4">Submitted By: {{ $entries[0]->getSite->projectManager->name }} </h5> --}}
                                                 </div>
                                             </td>
+
                                         </tr>
                                     @endif
                                     

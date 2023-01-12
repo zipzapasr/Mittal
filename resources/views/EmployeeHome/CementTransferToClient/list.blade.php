@@ -65,7 +65,7 @@
 
                                     <td>
 
-                                        <a href="{{ route('edit.cementTransfer' , ['id' => $cementTransfer->id, 'user' => session('employee')]) }}" class="btn btn-sm btn-info">Edit</a>
+                                        <a href="{{ route('edit.cementTransfer' , ['cementTransfer' => $cementTransfer->id, 'user' => session('employee')]) }}" class="btn btn-sm btn-info">Edit</a>
 
                                     </td>
 

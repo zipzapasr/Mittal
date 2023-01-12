@@ -17,6 +17,10 @@ class LoginController extends Controller
         return View('Login.project_manager');
     }
 
+    public function godown() {
+        return View('Login.godown');
+    }
+
     public function authenticate_data_entry_operator(Request $request) {
         $request->validate([
             'email' => ['required', 'email'],
@@ -57,6 +61,27 @@ class LoginController extends Controller
         }
     }
 
+    public function authenticate_godown(Request $request) {
+        $request->validate([
+            'email' => ['required', 'email'],
+            'password' => 'required'
+        ]);
+        $aval = User::where(['email' => $request->email,'role'=> '5', 'status' => 1])->first();
+        if($aval == null) {
+            Session::flash('message', 'Invalid Details');
+            return back();
+        }
+        $pass = Hash::check($request->password, $aval->password);
+        if($pass) {
+            session(['godown' => $aval]);
+            Session::flash('message', 'Logged in as Godown');
+            return redirect()->route('godown.home');
+        }
+        else {
+            return back()->with('message', 'Invalid Details');
+        }
+    }
+
     public function changePassword(Request $request, User $user) {
         $role = $user->role;
         return view('EmployeeHome.changePassword', compact('user', 'request', 'role'));
@@ -82,13 +107,26 @@ class LoginController extends Controller
     }
 
     public function logout() {
-        $role = session('employee')->role;
-        session(['employee' => null]);
-        if($role == '3') {
-            return redirect()->route('login.project_manager');
-        } else if($role == '4'){
-            return redirect()->route('login.data_entry_operator');
+        $user = null;
+        if(session('employee')){
+            $user = session('employee');
+            session(['employee' => null]);
+        } else if (session('godown')){
+            $user = session('godown');
+            session(['godown' => null]);
         }
+        if($user) {
+            $role = $user->role;
+            
+            if($role == '3') {
+                return redirect()->route('login.project_manager');
+            } else if($role == '4'){
+                return redirect()->route('login.data_entry_operator');
+            } else if($role == '5') {
+                return redirect()->route('login.godown');
+            }
+        }
+        
         return back();
     }
 }

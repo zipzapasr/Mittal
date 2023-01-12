@@ -46,6 +46,30 @@
 
                     </div>
 
+                    <div class="col-md-3">
+
+                        <label>
+
+                            From
+
+                            <input type="date" class="form-control" name="from" />
+
+                        </label>
+
+                    </div>
+
+                    <div class="col-md-3">
+
+                        <label>
+
+                            To
+
+                            <input type="date" class="form-control" name="to" />
+
+                        </label>
+
+                    </div>
+
                     <div class="col-md-2" style="margin-top: 25px">
 
                         <button type="button" class="btn btn-primary btn-sm" id="formSubmitBtn"> Get Data </button>
@@ -98,6 +122,10 @@
 
             var site = $('select[name=site]').find('option:selected').val();
 
+            var from = $('input[name=from]').val();
+
+            var to = $('input[name=to]').val();
+
 
             $('.white_card_body').find('.mytable').html('');
 
@@ -105,7 +133,7 @@
 
 
 
-            if (site) {
+            if (site && from && to) {
 
                 $.ajax({
 
@@ -118,6 +146,10 @@
                         _token: token,
 
                         site: site,
+
+                        to: to,
+
+                        from: from
 
                     },
 
@@ -192,7 +224,7 @@
 
                             }
 
-                            $('#tbody').append('<tr>' + '<td>' + activity_name + '</td>' + '<td>' + res.site_start_date + '</td>' + '<td>' + res.today + '</td>' + '<td>' + qtyByContractors + '</td>' + '<td>' + qtyBySelf + '</td>' + '<td style="font-weight:bold;">' + estQty + '</td>' + '<td style="font-weight:bold;">' + qty + '</td>' + '<td style="font-weight:bold;">' + (estQty - qty) + '</td>' + '</tr>');
+                            $('#tbody').append('<tr>' + '<td>' + activity_name + '</td>' + '<td>' + res.from + '</td>' + '<td>' + res.to + '</td>' + '<td>' + qtyByContractors + '</td>' + '<td>' + qtyBySelf + '</td>' + '<td style="font-weight:bold;">' + estQty + '</td>' + '<td style="font-weight:bold;">' + qty + '</td>' + '<td style="font-weight:bold;">' + (estQty - qty) + '</td>' + '</tr>');
 
                         }
 

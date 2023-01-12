@@ -34,11 +34,11 @@
                                                 </h4>
                                                 <div class="col-md-4">
                                                     @php
-                                                        $aval = $dataBySite[$site->id]['cement_purchase'] + $dataBySite[$site->id]['cement_in'] - $dataBySite[$site->id]['cement_out'] - $dataBySite[$site->id]['cement_consumption'] - $dataBySite[$site->id]['cement_transfer']
+                                                        $aval = $dataBySite[$site->id]['cement_purchase'] + $dataBySite[$site->id]['cement_in'] - $dataBySite[$site->id]['cement_out'] - $dataBySite[$site->id]['cement_consumption'] - $dataBySite[$site->id]['cement_transfer_to_client']
                                                     @endphp
                                                     <p style="font-weight: bold;">Cement Available = {{$aval}}</p>
                                                     @foreach ( $dataBySite[$site->id] as $field => $val )
-                                                        <p>{{$field}} = {{$val}}</p>
+                                                        <p>{{str_replace('_', ' ', mb_convert_case($field, MB_CASE_TITLE))}} = {{$val}}</p>
                                                     @endforeach
                                                 </div>
                                                 <h5 class="col-md-4"> </h5>

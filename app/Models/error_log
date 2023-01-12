@@ -1,0 +1,36 @@
+[10-Jan-2023 00:28:07 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Eloquent\Model" not found in /home/ripunaae/public_html/mittal/app/Models/Activity.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/app/Models/Activity.php on line 8
+[10-Jan-2023 00:55:04 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Eloquent\Model" not found in /home/ripunaae/public_html/mittal/app/Models/AdminSiteLog.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/app/Models/AdminSiteLog.php on line 10
+[10-Jan-2023 01:19:46 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Eloquent\Model" not found in /home/ripunaae/public_html/mittal/app/Models/CementIn.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/app/Models/CementIn.php on line 8
+[10-Jan-2023 01:55:55 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Eloquent\Model" not found in /home/ripunaae/public_html/mittal/app/Models/CementSupplier.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/app/Models/CementSupplier.php on line 8
+[10-Jan-2023 02:22:43 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Eloquent\Model" not found in /home/ripunaae/public_html/mittal/app/Models/Contractor.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/app/Models/Contractor.php on line 8
+[10-Jan-2023 03:14:25 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Eloquent\Model" not found in /home/ripunaae/public_html/mittal/app/Models/FieldType.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/app/Models/FieldType.php on line 8
+[10-Jan-2023 04:49:05 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Eloquent\Model" not found in /home/ripunaae/public_html/mittal/app/Models/SiteEntry.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/app/Models/SiteEntry.php on line 8
+[10-Jan-2023 08:13:47 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Eloquent\Model" not found in /home/ripunaae/public_html/mittal/app/Models/SiteTransfer.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/app/Models/SiteTransfer.php on line 8
+[10-Jan-2023 16:30:29 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Eloquent\Model" not found in /home/ripunaae/public_html/mittal/app/Models/Siteactivity.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/app/Models/Siteactivity.php on line 8

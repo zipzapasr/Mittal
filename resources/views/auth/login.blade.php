@@ -25,6 +25,11 @@
                         {{ __('Login as Data Entry Operator') }}
                     </a>
                 </div>
+                <div class="col-md-4 col-md-offset-2">
+                    <a class="btn btn-primary" href="{{ route('login.godown') }}">
+                        {{ __('Login as Godown') }}
+                    </a>
+                </div>
             </div>
         </section>
         <section class=" dashboard_part">

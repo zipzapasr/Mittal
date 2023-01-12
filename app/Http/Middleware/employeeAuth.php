@@ -16,7 +16,7 @@ class employeeAuth
      */
     public function handle(Request $request, Closure $next)
     {
-        if(session('employee') == null) {
+        if(session('employee') == null || session('employee')->status == 0) {
             abort(403);
         }
         return $next($request);

@@ -33,7 +33,7 @@
                                     <td>{{$cementPurchase->employee_id .' ' .$cementPurchase->getEmployee->name }}</td>
                                     <td>{{ $cementPurchase->remark }}</td>
                                     <td>
-                                        <a href="{{ route('edit.cementPurchase' , ['id' => $cementPurchase->id, 'user' => session('employee')]) }}" class="btn btn-sm btn-info">Edit</a>
+                                        <a href="{{ route('edit.cementPurchase' , ['cement_purchase' => $cementPurchase->id, 'user' => session('employee')]) }}" class="btn btn-sm btn-info">Edit</a>
                                     </td>
                                 </tr>
                             @endforeach

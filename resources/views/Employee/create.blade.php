@@ -60,9 +60,6 @@
                                 @endif
                             </label>
                         </div>
-                        @php
-                            $roles = app('App\Models\User')->roles;
-                        @endphp
                         <div class="mb_30">
                             <label style="width: 100%" for="">
                                 <div class="main-title">
@@ -71,7 +68,9 @@
                                 <div class=" mb-0">
                                     <select class="form-control" name="role">
                                         @foreach($roles as $k => $v)
-                                            <option value="{{ $k }}">{{ $v }}</option>
+                                            @if ($k != '1' && $k != '2')
+                                                <option value="{{ $k }}">{{ $v }}</option>
+                                            @endif
                                         @endforeach
                                     </select>
                                 </div>

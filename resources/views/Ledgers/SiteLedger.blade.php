@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
-
+<style>
+    td,th, tr {
+        text-align: center;
+    }
+</style>
 
 @section('content')
 
@@ -114,9 +118,7 @@
 
         $('#formSubmitBtn').click(function() {
 
-            console.log('clicked')
-
-
+            //console.log('clicked')
             var token = $('input[name=csrf_token]').val();
 
             var site = $('select[name=site]').find('option:selected').val();
@@ -155,7 +157,7 @@
 
                     success: function(res) {
 
-                        console.log(res)
+                        //console.log(res)
 
                         $('#thead').empty();
 

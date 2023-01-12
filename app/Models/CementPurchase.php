@@ -14,7 +14,6 @@ class CementPurchase extends Model
     public function getSite()
     {
         return $this->belongsTo(Sites::class, 'site_id', 'id',);
-
     }
 
     public function getSupplier() {

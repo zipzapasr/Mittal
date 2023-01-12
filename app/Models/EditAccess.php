@@ -19,4 +19,9 @@ class EditAccess extends Model
         'edit_cement_out_on_date',
         'edit_cement_transfer_to_client_on_date'
     ];
+
+    public function getSite()
+    {
+        return $this->belongsTo(Sites::class, 'value', 'id');
+    }
 }

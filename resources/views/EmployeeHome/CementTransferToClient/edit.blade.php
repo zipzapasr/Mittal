@@ -6,7 +6,7 @@
             <div class="white_card card_height_100 mb_30">
                 <div class="white_card_body row" >
                     <h4 style="padding: 20px 0px" >Edit Cement Transfer To Client Form</h4>
-                    <form method="POST" action="{{ route('update.cementTransfer', ['user' => $user, 'id' => $cement_transfer->id]) }}" class="col-md-6">
+                    <form method="POST" action="{{ route('update.cementTransfer', ['user' => $user, 'cementTransfer' => $cement_transfer->id]) }}" class="col-md-6">
                         @csrf
 
                         <div class="mb_30 row">

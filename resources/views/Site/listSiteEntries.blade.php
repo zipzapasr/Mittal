@@ -240,7 +240,7 @@
 
                                             @foreach($images as $img)
 
-                                                <a href="{{'/mittal/storage/app/public/'.$img}}">
+                                                <a target="_blank"  href="{{'/mittal/storage/app/public/'.$img}}">
 
                                                     <img src="{{'/mittal/storage/app/public/'.$img}}" alt="" style="width:15px;height:15px;">
 
@@ -264,8 +264,9 @@
                             @endforeach
 
 
-                            <a href="{{ route( 'verify.site', ['site' => $site_id, 'date' => $date] ) }}"  class="m-1 btn btn-primary {{ ($verified == true) ? 'disabled' : '' }}">Verify Entries</a>
-                            <a href="{{ route( 'giveEditAccess.site', ['site' => $site_id, 'date' => $date] ) }}"  class="m-1 btn btn-danger">Give Edit Access To PM</a>
+                            <a target="_blank" href="{{ route( 'verify.site', ['site' => $site_id, 'date' => $date] ) }}"  class="m-1 btn btn-primary {{ ($verified == true) ? 'disabled' : '' }}">Verify Entries</a>
+                            <a target="_blank" href="{{ route( 'giveEditAccess.site', ['site' => $site_id, 'date' => $date] ) }}"  class="m-1 btn btn-danger">Give Edit Access To PM</a>
+                            <a target="_blank" href="{{ route( 'logs.siteEntries', ['site' => $site_id, 'date' => $date] ) }}"  class="m-1 btn btn-success">View Edit Logs</a>
 
                         </tbody>
 

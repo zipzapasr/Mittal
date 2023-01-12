@@ -155,6 +155,32 @@
                         <li>
                             <a href="{{ route('view.cementPurchaseReport') }}">Cement Purchase Report</a>
                         </li>
+                        <li>
+                            <a href="{{ route('view.cementInReport') }}">Cement In Report</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('view.cementOutReport') }}">Cement Out Report</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="">
+                    <a class="has-arrow" href="#" aria-expanded="false">
+                        <div class="icon_menu">
+                            <img src="{{ asset('admin/img/menu-icon/3.svg') }}" alt="">
+                        </div>
+                        <span>Godown Reports</span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="{{ route('view.godownPurchaseReport') }}">Godown Purchase Report</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('view.godownOutReport') }}">Godown Out Report</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('view.godownInReport') }}">Cement Ins by Godown Report</a>
+                        </li>
                     </ul>
                 </li>
 
@@ -205,6 +231,45 @@
                             <a href="{{ route('view.allLedger') }}">All Ledger</a>
                         </li>
                     </ul>
+                </li>
+                <li class="">
+                    <a class="has-arrow" href="{{route('giveEditAccessView')}}" aria-expanded="false">
+                        <div class="icon_menu">
+                            <img src="{{ asset('admin/img/menu-icon/3.svg') }}" alt="">
+                        </div>
+                        <span>Give Edit Access</span>
+                    </a>
+                </li>
+                <li class="">
+                    <a class="has-arrow" href="{{route('viewEditAccess')}}" aria-expanded="false">
+                        <div class="icon_menu">
+                            <img src="{{ asset('admin/img/menu-icon/3.svg') }}" alt="">
+                        </div>
+                        <span>View Edit Access</span>
+                    </a>
+                </li>
+                <li class="">
+                    <a class="has-arrow" href="{{route('logs.viewEditLogs')}}" aria-expanded="false">
+                        <div class="icon_menu">
+                            <img src="{{ asset('admin/img/menu-icon/3.svg') }}" alt="">
+                        </div>
+                        <span>View Edit Logs</span>
+                    </a>
+                </li>
+                <li class="">
+
+                    <a class="has-arrow" href="{{ route('change.password', ['user' => auth()->user()]) }}" aria-expanded="false">
+
+                        <div class="icon_menu">
+
+                            <img src="{{ asset('admin/img/menu-icon/3.svg') }}" alt="">
+
+                        </div>
+
+                        <span>Change Password</span>
+
+                    </a>
+
                 </li>
 
             </ul>

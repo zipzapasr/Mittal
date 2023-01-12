@@ -16,7 +16,7 @@
 
                     <h4 style="padding: 20px 0px" >Update Cement In Form</h4>
 
-                    <form method="POST" action="{{ route('update.cementIn', ['user' => $user, 'id' => $cement_in->id]) }}" class="col-md-6">
+                    <form method="POST" action="{{ route('update.cementIn', ['user' => $user, 'cementIn' => $cement_in->id]) }}" class="col-md-6">
 
                         @csrf
 
@@ -106,9 +106,11 @@
 
                                     <select class="form-control" name="from_site">
 
+                                        <option value="0" {{($cement_in->from_site_id == 0)? 'selected' : ''}}>Godown</option
+
                                         @foreach($allsites as $site)
 
-                                            <option value="{{ $site->id }}" {{($cement_in ->from_site == $site->id)? 'selected' : ''}}>{{ $site->site_name }}</option>
+                                            <option value="{{ $site->id }}" {{($cement_in->from_site_id == $site->id)? 'selected' : ''}}>{{ $site->site_name }}</option>
 
                                         @endforeach
 

@@ -82,7 +82,9 @@
                                 <div class=" mb-0">
                                     <select class="form-control" name="role">
                                         @foreach($roles as $k => $v)
-                                            <option {{ ($k == $user->role) ? 'selected' : '' }} value="{{ $k }}">{{ $v }}</option>
+                                            @if ($k != '1' && $k != '2')
+                                                <option {{ ($k == $user->role) ? 'selected' : '' }} value="{{ $k }}">{{ $v }}</option>
+                                            @endif
                                         @endforeach
                                     </select>
                                 </div>

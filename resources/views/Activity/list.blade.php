@@ -28,7 +28,7 @@
                                             <div class="question_content">{{ $v->activity_name }}</div>
                                         </th>
                                         <td>{{ $v->activity_description }}</td>
-                                        <td>{{ $v->unit }}</td>
+                                        <td>{{ $v->getUnits->title }}</td>
                                         <td>
                                             {!! ($v->status == 0)? 'Deactivated' : 'Active' !!}
                                         </td>
@@ -36,7 +36,7 @@
                                             @if($v->status == 0)
                                                 <a href="{{ route('change.status.activity' , $v->id) }}" class="btn btn-success btn-sm">Activate</a>
                                             @else
-                                                <a href="{{ route('change.status.activity' , $v->id) }}" class="btn btn-sm btn-danger">Deactive</a>
+                                                <a href="{{ route('change.status.activity' , $v->id) }}" class="btn btn-sm btn-danger">DeActivate</a>
                                             @endif
                                                 <a href="{{ route('edit.activity' , $v->id) }}" class="btn btn-sm btn-info">Edit</a>
                                         </td>
@@ -73,7 +73,7 @@
                                             @if($v->status == 0)
                                                 <a href="{{ route('change.status.activity' , $v->id) }}" class="btn btn-success btn-sm">Activate</a>
                                             @else
-                                                <a href="{{ route('change.status.activity' , $v->id) }}" class="btn btn-sm btn-danger">Deactive</a>
+                                                <a href="{{ route('change.status.activity' , $v->id) }}" class="btn btn-sm btn-danger">DeActivate</a>
                                             @endif
                                                 <a href="{{ route('edit.activity' , $v->id) }}" class="btn btn-sm btn-info">Edit</a>
                                         </td>
@@ -86,7 +86,4 @@
             </div>
         </div>
     </div>
-    @section('javascript')
-        
-    @endsection
 @endsection

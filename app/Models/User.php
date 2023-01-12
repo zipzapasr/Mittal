@@ -39,6 +39,7 @@ class User extends Authenticatable
         2 => 'Admin',
         3 => 'Project Manager',
         4 => 'Site Data Entry',
+        5 => 'Godown'
     ];
 
     protected $fillable = [

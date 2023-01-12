@@ -43,26 +43,22 @@ class ActivityController extends Controller
         return back();
     }
     public function list(){
-        $activity = Activity::all();
-        return View( 'Activity.list' ,['activity' => $activity]);
+        $activity = Activity::with('getUnits')->get();
+        return View( 'Activity.list' , compact('activity'));
     }
-    public function changeStatus($activityId){
+    public function changeStatus(Activity $activity){
         
-        $user = Activity::where('id' , $activityId)->get();
-        if( $user->count() > 0 ){
-            if( $user[0]['status'] == 0 ){
-                Activity::where('id' , $activityId)->update([ 'status' => 1 ]);
-            }else{
-                Activity::where('id' , $activityId)->update([ 'status' => 0 ]);
-            }
+        if( $activity['status'] == 0 ){
+            $activity->update([ 'status' => 1 ]);
+        }else{
+            $activity->update([ 'status' => 0 ]);
         }
-        Session::flash('message' , 'User updated successfully');
+        Session::flash('message' , 'Activity updated successfully');
         return back();
     }
     
-    public function editActivity($activityId)
+    public function editActivity(Activity $activity)
     {
-        $activity = Activity::where('id' , $activityId)->first();
         $activity_types_list = DB::table('activity_types')->get();
         $unitlist = Unit::all();
         return View( 'Activity.edit', compact('activity', 'activity_types_list', 'unitlist'));

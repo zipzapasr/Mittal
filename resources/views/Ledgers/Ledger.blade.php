@@ -1,5 +1,11 @@
 @extends('layouts.app')
 
+<style>
+    td,th, tr {
+        text-align: center;
+    }
+</style>
+
 @section('content')
 
 <div class="row ">
@@ -87,7 +93,7 @@
 
 @section('javascript')
 
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+{{-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script> --}}
 
 <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
 
@@ -147,7 +153,7 @@
 
                     success: function(res) {
 
-                        console.log(res.data)
+                        //console.log(res.data)
 
                         $('#thead').empty();
 
@@ -162,6 +168,15 @@
                         var transferredToClientTotal = '<tr> <th style="font-weight: bold;">Transferred To Client</th>'
                         var closingTotal = '<tr> <th style="font-weight: bold;">Closing Stock</th> '
                         var wastageTotal = '<tr> <th style="font-weight: bold;">Wastage</th> '
+
+                        var openingAllSites = 0;
+                        var receivedAllSites = 0;
+                        var purchaseAllSites = 0;
+                        var consumptionAllSites = 0;
+                        var transferAllSites = 0;
+                        var transferredToClientAllSites = 0;
+                        var closingAllSites = 0;
+                        var wastageAllSites = 0;
 
 
                         var startDate = (res.request.from).toString()
@@ -227,6 +242,15 @@
                                 }
                             })
 
+                            openingAllSites += opening
+                            receivedAllSites += receive
+                            purchaseAllSites += purchase
+                            consumptionAllSites +=consume
+                            transferAllSites += transfer
+                            transferredToClientAllSites += transferToClient
+                            closingAllSites += closing
+                            wastageAllSites += waste
+
                             openingTotal += '<th>' + opening + '</th>'
                             receivedTotal += '<th>' + receive + '</th>'
                             purchaseTotal += '<th>' + purchase + '</th>'
@@ -238,16 +262,16 @@
 
                         });
 
-                        openingTotal += '</tr>'
-                        receivedTotal += '</tr>'
-                        purchaseTotal += '</tr>'
-                        consumptionTotal += '</tr>'
-                        transferTotal += '</tr>'
-                        transferredToClientTotal += '</tr>'
-                        closingTotal += '</tr>'
-                        wastageTotal += '</tr>'
+                        openingTotal += '<td>' + openingAllSites+'</td>' +  '</tr>'
+                        receivedTotal += '<td>' + receivedAllSites + '</td>' +  '</tr>'
+                        purchaseTotal += '<td>' + purchaseAllSites+ '</td>' +  '</tr>'
+                        consumptionTotal += '<td>' + consumptionAllSites + '</td>' +  '</tr>'
+                        transferTotal += '<td>' + transferAllSites + '</td>' +  '</tr>'
+                        transferredToClientTotal += '<td>' + transferredToClientAllSites + '</td>' +  '</tr>'
+                        closingTotal += '<td>' + closingAllSites + '</td>' +  '</tr>'
+                        wastageTotal += '<td>' + wastageAllSites  + '</td>' +  '</tr>'
 
-                        $('#thead').append('<tr> <th style="font-weight:bold;">Description</th>' + siteNames + '</tr>');
+                        $('#thead').append('<tr> <th style="font-weight:bold;">Description</th>' + siteNames + '<td style="font-weight: bold;">Total</td>' + '</tr>');
 
                         $('#tbody').append(openingTotal);
                         $('#tbody').append(receivedTotal);

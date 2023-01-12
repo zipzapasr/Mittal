@@ -24,11 +24,17 @@
                                         <div class="question_content">{{ $cementIn->date }}</div>
                                     </th>
                                     <td>{{ $cementIn->bags }}</td>
-                                    <td>{{$cementIn->getFromSite->site_name}}</td>
-                                    <td>{{ $cementIn->getToSite->site_name }}</td>
+                                    <td>
+                                        @if ($cementIn->from_site_id == 0)
+                                            Godown
+                                        @else
+                                            {{($cementIn->getFromSite) ? ($cementIn->getFromSite->site_name) : 'None' }}
+                                        @endif
+                                    </td>
+                                    <td>{{ ($cementIn->getToSite) ? ($cementIn->getToSite->site_name) : 'None' }}</td>
                                     <td>{{ $cementIn->remark }}</td>
                                     <td>
-                                        <a href="{{ route('edit.cementIn' , ['id' => $cementIn->id, 'user' => session('employee') ] ) }}" class="btn btn-sm btn-info">Edit</a>
+                                        <a href="{{ route('edit.cementIn' , ['cement_in' => $cementIn->id, 'user' => session('employee') ] ) }}" class="btn btn-sm btn-info">Edit</a>
                                     </td>
                                 </tr>
                             @endforeach

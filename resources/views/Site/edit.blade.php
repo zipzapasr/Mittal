@@ -86,7 +86,7 @@
                     </div>
 
 
-                    <div class="row">
+                    <div class="row gx-5">
                         <div class="mb_30 col-md-4">
                             <label style="width: 100%" for="">
                                 <div class="main-title">
@@ -125,7 +125,7 @@
                         <div class="mb_30 col-md-4">
                             <label style="width: 100%" for="">
                                 <div class="main-title">
-                                    <h3 class="m-0">Pettyy Contractors</h3>
+                                    <h3 class="m-0">Petty Contractors</h3>
                                 </div>
                                 <div class=" mb-0">
                                     <select multiple class="form-control select" name="contractors[]">
@@ -140,9 +140,10 @@
                                 @endif
                             </label>
                         </div>
+                        <a href="{{route('logs.site', ['site' => $site->id]) }}" class="btn btn-primary">View Edit Logs</a>
                     </div>
 
-                    <!--<div class="row">-->
+                    {{-- <!--<div class="row">-->
                     <!--    @foreach($activity as $k => $v)-->
 
                     <!--        <div class="mb_30 col-md-4 borderDashed">-->
@@ -159,7 +160,7 @@
                     <!--        </div>-->
 
                     <!--    @endforeach-->
-                    <!--</div>-->
+                    <!--</div>--> --}}
                     <div class="row">
                         <table class="table table-strip">
                             <thead>
@@ -175,7 +176,7 @@
                                 @foreach($siteactivity as $key => $val)
                                     <tr>
                                         <td style="text-transform: capitalize;" class="col-md-3">
-                                            <select class="form-control" id="selectActivity" name="selectActivity[]" style="text-transform: capitalize;">
+                                            <select class="form-control" class="selectActivity" name="selectActivity[]" style="text-transform: capitalize;">
                                                 @foreach($activity as $k => $v)
                                                     <option attunit="{{ $val->getActivity->getunits->title }}" {{ ( $val->getActivity->id == $v->id )? 'selected' : '' }}
                                                         value="{{ $v->id }}"> {{ $v->activity_name }} </option>
@@ -245,7 +246,7 @@
             });
         });
 
-        $(document).on('change', '#selectActivity', function() {
+        $(document).on('change', '.selectActivity', function() {
             console.log("kjnik");
             var element = $(this).find('option:selected');
             var selectedUnit = element.attr("attunit");
@@ -256,7 +257,7 @@
         $('.addnewrow').click(function() {
             var appendedRow = $('.defaultRow').html();
             console.log(appendedRow)
-            $('.appendedRow').append('<tr> <td style="text-transform: capitalize;" class="col-md-3"> <select class="form-control" id="selectActivity" name="selectActivity[]"  style="text-transform: capitalize;"> @foreach($activity as $k => $v) <option attunit="{{ $v->getunits->title }}" value="{{ $v->id }}"> {{ $v->activity_name }} </option> @endforeach </select> </td> <td style="text-transform: capitalize;padding-top: 20px;" class="unitname col-md-3"> </td> <td class="col-md-3"> <input type="number" class="form-control" name="estimate[]" /> </td> <td class="col-md-3"> <a href="javascript:void(0)" class="deleteRow"><i class="fa fa-trash" style="color: red"></i></a> </td> </tr>');
+            $('.appendedRow').append('<tr> <td style="text-transform: capitalize;" class="col-md-3"> <select class="form-control" class="selectActivity" name="selectActivity[]"  style="text-transform: capitalize;"> @foreach($activity as $k => $v) <option attunit="{{ $v->getunits->title }}" value="{{ $v->id }}"> {{ $v->activity_name }} </option> @endforeach </select> </td> <td style="text-transform: capitalize;padding-top: 20px;" class="unitname col-md-3"> </td> <td class="col-md-3"> <input type="number" class="form-control" name="estimate[]" /> </td> <td class="col-md-3"> <a href="javascript:void(0)" class="deleteRow"><i class="fa fa-trash" style="color: red"></i></a> </td> </tr>');
         })
         $(document).on('click', '.deleteRow', function() {
             if ($('.appendedRow > tr').length > 1) {

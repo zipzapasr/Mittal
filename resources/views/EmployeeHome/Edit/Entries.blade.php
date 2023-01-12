@@ -1,4 +1,3 @@
-{{-- {{dd('working')}} --}}
 @extends('./EmployeeHome/layout')
     <style>
         .modal-backdrop.show {
@@ -16,7 +15,7 @@
         $entryCount = $entries->count();
     @endphp
     <h5 style="color: white;">User: {{ $employee->name }}</h5>
-    {{-- <h5 style="color: white;">Role: {{ ($employee->role == '3') ? 'Project Manager' : 'Data Entry Operator' }}</h5> --}}
+    <h5 style="color: white;">Role: {{ ($employee->role == '3') ? 'Project Manager' : 'Data Entry Operator' }}</h5>
     <div class="container" style="margin-top:70px;">
         <div class="row mt-3 border">
             <div class="col-md-4 border">
@@ -72,9 +71,9 @@
                             <th class="col-sm-1">Field Type</th>
                             <th class="col-sm-1" id="contractor">Petty Contractor</th>
                             <th class="col-md-1">Skilled Workers</th>
-                            <th class="col-md-1">Skilled Workers Overtime(Hr)</th>
+                            <th class="col-md-1">Skilled Workers Ot(Hr)</th>
                             <th class="col-md-1">UnSkilled Workers</th>
-                            <th class="col-md-1">UnSkilled Workers Overtime(Hr)</th>
+                            <th class="col-md-1">UnSkilled Workers Ot(Hr)</th>
                             <th class="col-md-1">Cement Bags</th>
                             <th class="col-md-1">Images</th>
                         </tr>
@@ -125,9 +124,26 @@
 
                                 <td class="col-sm-1"><input type="number" class="form-control" name="cement_bags[]" value="{{ $entry->cement_bags ?? 0 }}" min="0" /></td>
 
-                                <td class="col-sm-1">
+                                {{-- <td class="col-sm-1">
                                     <input type="file" class="form-control" multiple name="{{'images'.$ind.'[]'}}" value="{{ $entry->images ?? '' }}">
-                                </td>
+                                </td> --}}
+                                <td class="col-sm-1">
+                                        @php 
+                                            $images = explode(',', $entry->images);
+                                        @endphp
+                                        @if($entry->images != '')
+                                            @foreach ( $images as $img)
+                                                <img src="{{'/mittal/storage/app/public/'.$img}}" alt="" style="width:15px;height:15px;">
+                                            @endforeach
+                                        @endif
+                                        
+                                        
+                                        <input type="file" class="form-control" multiple name="{{'images'.$ind.'[]'}}" value="{{ $entry->images ?? '' }}">
+                                        @if($entry->images != '')
+                                            <button type="button" class="btn btn-primary btn-images" data-bs-toggle="modal" data-bs-target="#imagesModal" data-entryid="{{$entry->id}}">View Images</button>
+                                        @endif
+                                        
+                                    </td>
                             </tr>
                         @endforeach
                     </tbody>
@@ -200,6 +216,24 @@
             </div>
         </div>
     </div>
+    {{--View Images Modal--}}
+        <div class="modal fade" id="imagesModal" tabindex="-1" aria-labelledby="imagesModalLabel" aria-hidden="true" data-images="">        
+            <div class="modal-dialog modal-lg"> {{-- style="z-index: 99999" --}}
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="imagesModalLabel">View Your Uploaded images</h1>
+                        {{-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> --}}
+                    </div>
+                    <div class="modal-body">
+                        <div id="showImages"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        {{-- <a href="{{ $site->id }}/submit/today" type="button" class="btn btn-primary" id="btnToday">Submit To Admin</a> --}}
+                    </div>
+                </div>
+            </div>
+        </div>
 
 @endsection
 
@@ -275,6 +309,52 @@
 
                 }
             });
+
+            $('.btn-images').click(function(){
+                console.log('btn', $(this))
+                input = $(this).parent().find('input[type=file]');
+                //console.log(input);
+                defaultImages = input.prop('defaultValue');
+                images = defaultImages.split(',');
+                imagesDiv = '';
+                entryId = $(this).data('entryid');
+                images.forEach( (img,ind) => {
+                    //console.log(ind);
+                    imagesDiv += `<div><img src="/mittal/storage/app/public/${img}" style="width:50px;height:50px;"> <a href="javascript:void(0)" id="${ind}" class="removeImage" data-entryid="${entryId}"><i class="fa fa-trash"></i></a> </div>`
+                })
+                //newImages = input.prop('files');
+                //if(newImages.length){
+                    //for (const file of newImages) {
+                        //console.log(file);
+                    //}
+                //}
+                //console.log(newImages)
+                //{newImages.forEach(img => {
+                  //  console.log(img);
+                //});
+                $('#showImages').html('');
+                $('#showImages').append('<div>' + imagesDiv + '</div>');
+            })
+
+            $(document).on('click', '.removeImage', function(){
+                img = $(this);
+                console.log(img.parent().index())
+                console.log('clicked')
+                //console.log($(this))
+                id = img.prop('id');
+                entryId = img.data('entryid');
+                console.log(entryId);
+                $.ajax({
+                    url: `/mittal/public/delete/siteEntry/${entryId}/${id}`,
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function(res) {
+                        //console.log(res);
+                        //console.log($(this))
+                        img.parent().remove();
+                    }
+                });
+            })
 
         });
     </script>

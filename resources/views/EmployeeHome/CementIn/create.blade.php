@@ -107,7 +107,7 @@
                                 <div class=" mb-0">
 
                                     <select class="form-control" name="from_site">
-
+                                        <option value="0">Godown</option> 
                                         @foreach($allsites as $site)
 
                                             <option value="{{ $site->id }}">{{ $site->site_name }}</option>

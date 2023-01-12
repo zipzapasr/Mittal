@@ -12,13 +12,17 @@ class EmployeeController extends Controller
 {
     public function create()
     {
-        return View('Employee.create');
+        $roles = app(User::class)->roles;
+        // dd($roles);
+
+        return View('Employee.create', compact('roles'));
     }
+
     public function save(Request $request){
         $request->validate([
             "username" => "required",
             "email" => "required|unique:users",
-            "mobile" => "required|min:10|max:10",
+            "mobile" => "required|min:10|max:10|unique:users",
             "password" => "required|min:8",
             "role" => 'required'
         ]);
@@ -46,7 +50,7 @@ class EmployeeController extends Controller
         $mailFromName = "Surya Constructions";
 
 
-        $response = Mail::send('mail', $data, function($message) use ($mailTo, $mailMessage, $subject, $mailFrom, $mailFromName) {
+        $response = Mail::send('mails.mail', $data, function($message) use ($mailTo, $mailMessage, $subject, $mailFrom, $mailFromName) {
                 $message->to($mailTo, $mailMessage)->subject($subject);
                 $message->from($mailFrom,$mailFromName);
         });
@@ -56,33 +60,30 @@ class EmployeeController extends Controller
     }
     public function list(){
 
-        $user = User::all();
-        // dd($user);
-        return View( 'Employee.list' ,['users' => $user]);
+        $users = User::all();
+        return View( 'Employee.list' , compact('users'));
     }
-    public function changeStatus($employeeId){
-        $user = User::where('id' , $employeeId)->get();
-        if( $user->count() > 0 ){
-            if( $user[0]['status'] == 0 ){
-                User::where('id' , $employeeId)->update([ 'status' => 1 ]);
-            }else{
-                User::where('id' , $employeeId)->update([ 'status' => 0 ]);
-            }
+    public function changeStatus(User $user){
+        if( $user['status'] == 0 ){
+            $user->update([ 'status' => 1 ]);
+        }else{
+            $user->update([ 'status' => 0 ]);
         }
         Session::flash('message' , 'User updated successfully');
         return back();
     }
-    public function editEmployee($employeeId)
+    public function editEmployee(User $user)
     {
-        $user = User::where('id' , $employeeId)->first();
         return View( 'Employee.edit', compact('user'));
     }
     public function updateEmployee(Request $request)
     {
+        // dd($request->all());
+        $user = User::findOrFail($request->employeeId);
         $request->validate([
             "username" => "required",
-            "email" => "required",
-            "mobile" => "required|min:10|max:10",
+            "email" => "required|unique:users,email,{$request->employeeId}",
+            "mobile" => "required|min:10|max:10|unique:users,mobile,{$request->employeeId}",
             'role' => "required"
 
         ]);
@@ -96,7 +97,7 @@ class EmployeeController extends Controller
                 //'raw_password' => $request->password,
                 'role' => $request->role
             ];
-        }else{
+        } else{
             $requestData = [
                 'name' => $request->username,
                 'email' => $request->email,
@@ -104,7 +105,8 @@ class EmployeeController extends Controller
                 'role' => $request->role
             ];
         }
-        User::where(['id' => $request->employeeId ])->update($requestData);
+        
+        $user->update($requestData);
         Session::flash('message' , 'User updated successfully');
         return back();
     }

@@ -18,7 +18,7 @@
                                     {{--<input type="date" class="form-control" name="date" id="date" value="{{ old('date') ?? date('Y-m-d') }}" placeholder="Date">--}}
                                     <div class="form-check form-control col-md-3 col-offset-3">
                                         <label class="form-check-label" for="flexRadioDefault1">Today</label>
-                                        <input type="radio" class="form-check-input" name="date" id="flexRadioDefault1" value="{{$today}}" {{(old('date') == $today) ? 'checked' : ''}} required>
+                                        <input type="radio" class="form-check-input" name="date" id="flexRadioDefault1" value="{{$today}}" checked {{(old('date') == $today) ? 'checked' : ''}} required>
                                     </div>
                                     <div class="form-check form-control col-md-3">
                                         <label class="form-check-label" for="flexRadioDefault2">Yesterday</label>

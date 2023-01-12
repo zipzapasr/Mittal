@@ -28,7 +28,7 @@
                                     <td>{{ $cementOut->getToSite->site_name }}</td>
                                     <td>{{ $cementOut->remark }}</td>
                                     <td>
-                                        <a href="{{ route('edit.cementOut' , ['id' => $cementOut->id, 'user' => session('employee')]) }}" class="btn btn-sm btn-info">Edit</a>
+                                        <a href="{{ route('edit.cementOut' , ['cementOut' => $cementOut->id, 'user' => session('employee')]) }}" class="btn btn-sm btn-info">Edit</a>
                                     </td>
                                 </tr>
                             @endforeach

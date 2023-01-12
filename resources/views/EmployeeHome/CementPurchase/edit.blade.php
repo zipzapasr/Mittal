@@ -6,7 +6,7 @@
             <div class="white_card card_height_100 mb_30">
                 <div class="white_card_body row" >
                     <h4 style="padding: 20px 0px" >Cement Purchase Form</h4>
-                    <form method="POST" action="{{ route('update.cementPurchase', ['user' => $user, 'id' => $cement_purchase->id]) }}" class="col-md-6">
+                    <form method="POST" action="{{ route('update.cementPurchase', ['user' => $user, 'cement_purchase' => $cement_purchase->id]) }}" class="col-md-6">
                         @csrf
 
                         <div class="mb_30 row">
@@ -85,7 +85,7 @@
                                     <h3 class="m-0">Remark</h3>
                                 </div>
                                 <div class=" mb-0">
-                                    <input type="textArea" class="form-control" name="remark" required placeholder="Remark" value="{{ $cement_purchase->remark}}"></input>
+                                    <input type="textArea" class="form-control" name="remark" required placeholder="Remark" value="{{ $cement_purchase->remark}}" />
                                 </div>
                                 @if($errors->has('remark'))
                                     <p style="color:red;margin-left: 20px">{{ $errors->first('remark') }}</p>

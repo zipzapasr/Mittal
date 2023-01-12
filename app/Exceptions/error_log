@@ -2,3 +2,7 @@
 Stack trace:
 #0 {main}
   thrown in /home/ripunaae/public_html/mittal/app/Exceptions/Handler.php on line 8
+[07-Jan-2023 14:44:03 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Exceptions\Handler" not found in /home/ripunaae/public_html/mittal/app/Exceptions/Handler.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/app/Exceptions/Handler.php on line 8

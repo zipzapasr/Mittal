@@ -15,7 +15,7 @@ class SiteTransferController extends Controller
         $sitetransfer = SiteTransfer::with(['siteFromDetails', 'siteToDetails'])->get();
 
         //dd($sitetransfer);
-        return View('SiteTransfer.list', ['sitetransfer' => $sitetransfer]);
+        return View('SiteTransfer.list', compact('sitetransfer'));
     }
 
     public function create()
@@ -46,15 +46,15 @@ class SiteTransferController extends Controller
         return back();
     }
 
-    public function editSiteTransfer($sitetransferId)
+    public function editSiteTransfer(SiteTransfer $sitetransfer)
     {
-        $sitetransfer = SiteTransfer::where('id', $sitetransferId)->first();
-        $sitetransferlist = Sites::all();
+        $sitetransferlist = Sites::orderBy('site_name')->get();
         return View('SiteTransfer.edit', compact('sitetransfer', 'sitetransferlist'));
     }
 
     public function updateSiteTransfer(Request $request)
     {
+        $sitetransfer = SiteTransfer::findOrFail($request->sitetransferId);
         $request->validate([
             "date" => "required",
             "site_from" => "required",
@@ -67,22 +67,18 @@ class SiteTransferController extends Controller
             'site_to' => $request->site_to,
             "num_bags" => $request->num_bags
         ];
-        SiteTransfer::where('id', $request->sitetransferId)->update($requestData);
+        $sitetransfer->update($requestData);
 
         Session::flash('message', 'Site Transfer updated successfully');
         return back();
     }
 
-    public function changeStatus($sitetransferId)
+    public function changeStatus(SiteTransfer $sitetransfer)
     {
-
-        $sitetransfer = SiteTransfer::where('id', $sitetransferId)->get();
-        if ($sitetransfer->count() > 0) {
-            if ($sitetransfer[0]['status'] == 0) {
-                SiteTransfer::where('id', $sitetransferId)->update(['status' => 1]);
-            } else {
-                SiteTransfer::where('id', $sitetransferId)->update(['status' => 0]);
-            }
+        if ($sitetransfer['status'] == 0) {
+            $sitetransfer->update(['status' => 1]);
+        } else {
+            $sitetransfer->update(['status' => 0]);
         }
         Session::flash('message', 'Site Transfer updated successfully');
         return back();

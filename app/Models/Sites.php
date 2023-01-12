@@ -43,15 +43,28 @@ class Sites extends Model
         return $this->hasMany(CementPurchase::class, 'site_id', 'id');
     }
 
-    public function getCementIns() {
+    public function getCementInsSelf() {
         return $this->hasMany(CementIn::class, 'to_site_id', 'id');
     }
 
-    public function getCementOuts() {
+    public function getCementInsOther() {
+        return $this->hasMany(CementOut::class, 'to_site_id', 'id');
+    }
+
+    public function getCementOutsSelf() {
+        return $this->hasMany(CementOut::class, 'from_site_id', 'id');
+    }
+
+    public function getCementOutsOther() {
         return $this->hasMany(CementIn::class, 'from_site_id', 'id');
     }
 
     public function getCementTransfersToClient() {
         return $this->hasMany(CementTransferToClient::class, 'site_id', 'id');
     }
+
+    public function getEditLogs() {
+        return $this->hasMany(AdminSiteLog::class, 'site_id', 'id');
+    }
+
 }

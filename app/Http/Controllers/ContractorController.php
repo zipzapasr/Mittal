@@ -5,13 +5,14 @@ namespace App\Http\Controllers;
 use Session;
 use Illuminate\Http\Request;
 use App\Models\Contractor;
+use App\Http\Requests\ContractorRequest;
 
 class ContractorController extends Controller
 {
 
     public function list(){
         $contractor = Contractor::all();
-        return View( 'Contractor.list' ,['contractor' => $contractor]);
+        return View( 'Contractor.list' , compact('contractor'));
     }
 
     public function create()
@@ -20,17 +21,8 @@ class ContractorController extends Controller
         return View('Contractor.create'); //compact('contractorlist')
     }
 
-    public function save(Request $request){
-        $request->validate([
-            "business_name" => "required",
-            "name" => "required",
-            "mobile" => "required|min:10|max:10",
-        ]);
-
-        $requestData = [
-            'name' => $request->name,
-            'business_name' => $request->business_name,
-            'mobile' => $request->mobile,
+    public function save(ContractorRequest $request){
+        $requestData = $request->validated() + [
             'details' => $request->details,
             'status' => 1
         ];
@@ -39,40 +31,30 @@ class ContractorController extends Controller
         return back();
     }
 
-    public function editContractor($contractorId)
+    public function editContractor(Contractor $contractor)
     {
-        $contractor = Contractor::where('id' , $contractorId)->first();
         return View( 'Contractor.edit', compact('contractor'));
     }
 
-    public function updateContractor(Request $request)
+    public function updateContractor(ContractorRequest $request)
     {
-        $request->validate([
-            "business_name" => "required",
-            "name" => "required",
-            "mobile" => "required|min:10|max:10",
-        ]);
-        $requestData = [
-            'name' => $request->name,
-            'business_name' => $request->business_name,
-            'mobile' => $request->mobile,
-            'details' => $request->details
+        $contractor = Contractor::findOrFail($request->contractorId);
+        $requestData = $request->validated() + [
+            'details' => $request->details,
+            'status' => 1
         ];
-        Contractor::where(['id' => $request->contractorId ])->update($requestData);
+        $contractor->update($requestData);
 
         Session::flash('message' , 'Contractor updated successfully');
         return back();
     }
 
-    public function changeStatus($contractorId){
-
-        $contractor = Contractor::where('id' , $contractorId)->get();
-        if( $contractor->count() > 0 ){
-            if( $contractor[0]['status'] == 0 ){
-                Contractor::where('id' , $contractorId)->update([ 'status' => 1 ]);
-            }else{
-                Contractor::where('id' , $contractorId)->update([ 'status' => 0 ]);
-            }
+    public function changeStatus(Contractor $contractor){
+        // dd($contractor);
+        if( $contractor['status'] == 0 ){
+            $contractor->update([ 'status' => 1 ]);
+        }else{
+            $contractor->update([ 'status' => 0 ]);
         }
         Session::flash('message' , 'Contractor updated successfully');
         return back();

@@ -36,7 +36,7 @@
 
                                         <label class="form-check-label" for="flexRadioDefault1">Today</label>
 
-                                        <input type="radio" class="form-check-input" name="date" id="flexRadioDefault1" value="{{$today}}" {{(old('date') == $today) ? 'checked' : ''}} required>
+                                        <input type="radio" class="form-check-input" name="date" id="flexRadioDefault1" value="{{$today}}" checked {{(old('date') == $today) ? 'checked' : ''}} required>
 
                                     </div>
 

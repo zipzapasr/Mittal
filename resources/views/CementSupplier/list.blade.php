@@ -31,7 +31,7 @@
                                         @if($v->status == 0)
                                             <a href="{{ route('change.status.cementsupplier' , $v->id) }}" class="btn btn-success btn-sm">Activate</a>
                                         @else
-                                            <a href="{{ route('change.status.cementsupplier' , $v->id) }}" class="btn btn-sm btn-danger">Deactive</a>
+                                            <a href="{{ route('change.status.cementsupplier' , $v->id) }}" class="btn btn-sm btn-danger">DeActivate</a>
                                         @endif
                                             <a href="{{ route('edit.cementsupplier' , $v->id) }}" class="btn btn-sm btn-info">Edit</a>
                                     </td>
@@ -43,7 +43,4 @@
             </div>
         </div>
     </div>
-    @section('javascript')
-        
-    @endsection
 @endsection

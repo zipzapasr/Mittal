@@ -1,14 +1,13 @@
 @extends('./EmployeeHome/layout')
 
 
-
 @section('content')
 
     {{-- {{ dd($mysites9) }} --}}
 
-    <h5 style="color: white;">User: {{ $employee->name }}</h5>
+    <h5 style="color: white;">User: {{ session('employee')->name }}</h5>
 
-    <h5 style="color: white;">Role: {{ ($employee->role == '3') ? 'Project Manager' : 'Data Entry Operator' }}</h5>
+    <h5 style="color: white;">Role: {{ (session('employee')->role == '3') ? 'Project Manager' : 'Data Entry Operator' }}</h5>
 
     <div class="row ">
 
