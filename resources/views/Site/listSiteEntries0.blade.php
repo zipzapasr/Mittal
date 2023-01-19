@@ -10,14 +10,7 @@
 
 <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.3.2/css/buttons.dataTables.min.css">
 @section('content')
-    {{-- {{dd($siteActivity, $entriesByDate)}} --}}
     <div class="container" style="margin-top:70px;">
-        @php
-            $remQty = [];
-            foreach($siteActivity as $id => $qty)
-                $remQty[$id] = $qty;
-        @endphp
-
 
         <h3>Filter Entries</h3>
 
@@ -62,7 +55,7 @@
         </form>
 
         @foreach($entriesByDate as $date => $entries)
-            <div style="display: {{($date < $from || $date > $to) ? 'none' : ''}}">
+            <div>
                 @php
                     $displayDate = date('d-m-Y', strtotime($date));
                 @endphp
@@ -106,6 +99,8 @@
 
                                 <th>Est. Qty</th>
 
+                                <th>Prev. Qty</th>
+
                                 <th>Used Qty</th>
 
                                 <th>Rem. Qty</th>
@@ -146,7 +141,7 @@
 
                                     $images = ($entry->images) ? explode(',', $entry->images) : [];
                                     $currActivity = $entry->getActivity;
-                                    $remQty[$currActivity->id] -= $entry->qty;
+                                    // $remQty[$currActivity->id] -= $entry->qty;
 
                                 @endphp
 
@@ -182,6 +177,10 @@
                                         <p>{{ ($siteActivity[$currActivity->id]) ? ($siteActivity[$currActivity->id]) : 0 }}</p>
 
                                     </td>
+                                    
+                                    <td>
+                                        <p>{{ $entry->prevQty }}</p>
+                                    </td>
 
                                     <td>
 
@@ -191,7 +190,7 @@
 
                                     <td>
 
-                                        <p>{{ ($remQty[$currActivity->id]) ? ($remQty[$currActivity->id]) : -($entry->qty)}}</p>
+                                        <p>{{ $entry->remQty}}</p>
 
                                     </td>
 

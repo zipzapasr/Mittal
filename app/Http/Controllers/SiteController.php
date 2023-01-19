@@ -28,9 +28,9 @@ class SiteController extends Controller
     {
         $lastSiteDetails = [];
         $lastSite = Sites::orderBy('id', 'DESC')->get();
-        $project_managers = User::where('role', '3')->get();
-        $data_entry_operators = User::where('role', '4')->get();
-        $contractors = Contractor::orderBy('name')->get();
+        $project_managers = User::where(['role' =>  '3', 'status' => '1'])->get();
+        $data_entry_operators = User::where(['role' => '4', 'status' => '1'])->get();
+        $contractors = Contractor::where(['status' => '1'])->orderBy('name')->get();
 
         if ($lastSite->count() > 0) {
             $lastSiteDetails = $lastSite[0];
@@ -41,7 +41,7 @@ class SiteController extends Controller
         3 => 'Project Manager',
         4 => 'Site Data Entry',
         ];*/
-        $activity = Activity::with(['getUnits'])->get();
+        $activity = Activity::where(['status' => '1'])->with(['getUnits'])->get();
         return View('Site.create', compact('lastSiteDetails', 'activity', 'project_managers', 'data_entry_operators', 'contractors'));
     }
     public function save(Request $request)
@@ -168,9 +168,11 @@ class SiteController extends Controller
                     }])
                 ->first();
 
-        $activity = Activity::with(['getUnits'])->get();
-        $project_managers = User::where('role', '3')->get();
-        $data_entry_operators = User::where('role', '4')->get();
+        // $site =
+
+        $activity = Activity::where(['status' => '1'])->with(['getUnits'])->get();
+        $project_managers = User::where(['status' => '1', 'role' => '3'])->get();
+        $data_entry_operators = User::where(['status' => '1', 'role' => '4'])->get();
         $siteactivity = $site->getSiteactivity;
         $selectedContractors = SiteContractor::where(['site_id' => $siteId, 'status' => '1'])
                                 ->get()
@@ -178,7 +180,7 @@ class SiteController extends Controller
                                     return $query->contractor_id;
                                 })->toArray();
         // dd($selectedContractors);
-        $contractors = Contractor::orderBy('name')->get();
+        $contractors = Contractor::where(['status' => '1'])->orderBy('name')->get();
         //dd($contractors);
 
         return View('Site.edit', compact('site', 'activity', 'processedData', 'project_managers', 'data_entry_operators', 'siteactivity', 'contractors', 'selectedContractors'));
@@ -395,29 +397,85 @@ class SiteController extends Controller
         $from = Carbon::today()->subDays(5)->format('Y-m-d');
         $site_id = $site->id;
 
-        $siteActivity = Sites::where('id', $site_id)
-                            ->with(['getSiteActivity'])
-                            ->first()
-                            ->getSiteActivity
-                            ->groupBy('activity_id')
-                            ->map(function($query){
-                                return $query->sum('qty');
-                            });
+        // $siteActivity = Sites::where('id', $site_id)
+        //                     ->with(['getSiteActivity'])
+        //                     ->first()
+        //                     ->getSiteActivity
+        //                     ->groupBy('activity_id')
+        //                     ->map(function($query){
+        //                         return $query->sum('qty');
+        //                     });
+
+        $siteActivity = $site
+                        ->getSiteActivity
+                        ->groupBy('activity_id')
+                        ->map(function($query){
+                            return $query->sum('qty');
+                        });
+        // dd($siteActivity);  
+        $remQty = $siteActivity->toArray();
+        // foreach($remQty as $id => $qty) {
+        //     $remQty[$id] = $qty / 2;
+        // }
+        // dd($remQty, $siteActivity);
                            
 
+
         $entriesByDate = SiteEntry::where(['site_id' => $site_id])
-                            ->with(['getFieldType', 'getContractor', 'getActivity' => function($query){
-                                return $query->with('getUnits');
-                            }])
-                            ->whereIn('status', ['1', '2'])
-                            ->get()
-                            ->groupBy('progress_date');
+                        ->with(['getFieldType', 'getContractor', 'getActivity.getUnits'])
+                        ->whereIn('status', ['1', '2'])
+                        ->get()
+                        ->each(function($entry) use (&$remQty) {
+                            $entry->prevQty = $remQty[$entry->activity_id];
+                            $remQty[$entry->activity_id] -= $entry->qty;
+                            $entry->remQty = $remQty[$entry->activity_id];
+                        })
+                        ->sortByDesc('progress_date')
+                        ->groupBy('progress_date')
+                        // ->orderBy('progress_date')
+                        ->filter(function($entries, $date) use($from, $to) {
+                            // dump($date);
+                            return $date >= $from && $date <= $to;
+                        });
+
+
+        // dd($entriesByDate);
 
 
         // $activity = Activity::with(['getUnits'])->get();
         
-        return View('Site.listSiteEntries', compact('entriesByDate', 'siteActivity', 'from', 'to', 'site_id'));  
+        return View('Site.listSiteEntries0', compact('entriesByDate', 'siteActivity', 'from', 'to', 'site_id'));  
     }
+
+    // public function listSiteEntries2(Sites $site)
+    // {
+    //     $to = Carbon::today()->format('Y-m-d');
+    //     $from = Carbon::today()->subDays(5)->format('Y-m-d');
+    //     $site_id = $site->id;
+
+    //     $siteActivity = $site
+    //                     ->getSiteActivity
+    //                     ->groupBy('activity_id')
+    //                     ->map(function($query){
+    //                         return $query->sum('qty');
+    //                     });
+                           
+
+    //     $entriesByDate = SiteEntry::where(['site_id' => $site_id])
+    //                     ->with(['getFieldType', 'getContractor', 'getActivity.getUnits'])
+    //                     ->whereIn('status', ['1', '2'])
+    //                     ->get()
+    //                     ->groupBy('progress_date');
+
+        
+
+    //     // dd($entriesByDate);
+
+
+    //     // $activity = Activity::with(['getUnits'])->get();
+        
+    //     return View('Site.listSiteEntries', compact('entriesByDate', 'siteActivity', 'from', 'to', 'site_id'));  
+    // }
 
     public function updateCementWastage(Request $request) {
         $entry = SiteEntry::findOrFail($request->site);
@@ -451,23 +509,51 @@ class SiteController extends Controller
     {
         $from = Carbon::parse($request->from)->format('Y-m-d');
         $to = Carbon::parse($request->to)->format('Y-m-d');
-
-        $entriesByDate = SiteEntry::where(['site_id' => $site->id])
-                            ->with('getFieldType', 'getContractor')
-                            ->whereIn('status', ['1', '2'])
-                            ->get()
-                            ->groupBy('progress_date');
-
         $site_id = $site->id;
-        $siteActivity = Sites::where('id', $site_id)
-                            ->with(['getSiteActivity'])
-                            ->first()
-                            ->getSiteActivity
-                            ->groupBy('activity_id')
-                            ->map(function($query){
-                                return $query->sum('qty');
-                            });
-        return View('Site.listSiteEntries', compact('entriesByDate', 'siteActivity', 'from', 'to', 'site_id'));  
+
+        // $entriesByDate = SiteEntry::where(['site_id' => $site->id])
+        //                     ->with('getFieldType', 'getContractor')
+        //                     ->whereIn('status', ['1', '2'])
+        //                     ->get()
+        //                     ->groupBy('progress_date');'
+
+        $siteActivity = $site
+                        ->getSiteActivity
+                        ->groupBy('activity_id')
+                        ->map(function($query){
+                            return $query->sum('qty');
+                        });
+
+        $remQty = $siteActivity->toArray();
+
+        $entriesByDate = SiteEntry::where(['site_id' => $site_id])
+                        ->with(['getFieldType', 'getContractor', 'getActivity.getUnits'])
+                        ->whereIn('status', ['1', '2'])
+                        ->get()
+                        ->each(function($entry) use (&$remQty) {
+                            $entry->prevQty = $remQty[$entry->activity_id];
+                            $remQty[$entry->activity_id] -= $entry->qty;
+                            $entry->remQty = $remQty[$entry->activity_id];
+                        })
+                        ->sortByDesc('progress_date')
+                        ->groupBy('progress_date')
+                        // ->orderBy('progress_date')
+                        ->filter(function($entries, $date) use($from, $to) {
+                            // dump($date);
+                            return $date >= $from && $date <= $to;
+                        });
+
+        
+        // $siteActivity = Sites::where('id', $site_id)
+        //                     ->with(['getSiteActivity'])
+        //                     ->first()
+        //                     ->getSiteActivity
+        //                     ->groupBy('activity_id')
+        //                     ->map(function($query){
+        //                         return $query->sum('qty');
+        //                     });
+        
+        return View('Site.listSiteEntries0', compact('entriesByDate', 'siteActivity', 'from', 'to', 'site_id', 'remQty'));  
     }
 
     // public function giveEditAccess(Sites $site, $date)

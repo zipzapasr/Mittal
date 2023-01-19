@@ -6,7 +6,7 @@
             <div class="white_card card_height_100 mb_30">
                 <div class="white_card_body row" >
                     <h4 style="padding: 20px 0px" >Cement Purchase Form</h4>
-                    <form method="POST" action="{{ route('store.godown.cementPurchase', ['user' => $user]) }}" class="col-md-6">
+                    <form method="POST" action="{{ route('store.godown.cementPurchase') }}" class="col-md-6">
                         @csrf
 
                         <div class="mb_30 row">
@@ -35,10 +35,10 @@
                         <div class="mb_30">
                             <label style="width: 100%" for="">
                                 <div class="main-title">
-                                    <h3 class="m-0">Num. of Bags</h3>
+                                    <h3 class="m-0">Number of Bags</h3>
                                 </div>
                                 <div class=" mb-0">
-                                    <input type="number" min="0" class="form-control" name="bags" value="{{ old('bags') ?? 0 }}" id="bags" placeholder="Num. of Bags" required>
+                                    <input type="number" min="0" class="form-control" name="bags" value="{{ old('bags') ?? 0 }}" id="bags" placeholder="Number of Bags" required>
                                 </div>
                                 @if($errors->has('bags'))
                                     <p style="color:red;margin-left: 20px">{{ $errors->first('bags') }}</p>
@@ -53,8 +53,9 @@
                                 </div>
                                 <div class=" mb-0">
                                     <select class="form-control" name="supplier" required>
-                                        @foreach($suppliers as $supplier)
-                                            <option value="{{ $supplier->id }}">{{ $supplier->name }}</option>
+                                        @foreach($suppliers as $id => $supplier)
+                                            {{-- <option value="{{ $supplier->id }}">{{ $supplier->name }}</option> --}}
+                                            <option value={{$id}}>{{$supplier}}</option>
                                         @endforeach
                                     </select>
                                 </div>

@@ -36,23 +36,26 @@ class GodownController extends Controller
         return View('Godown.home', compact('godown', 'cement_available'));
     }
 
-    public function listCementPurchase($id)
+    public function listCementPurchase()
     {
         // dd(Schema::getColumnListing('cement_purchase'));
-        
-        $cementPurchases = CementPurchase::where(['employee_id' => $id, 'status' => 1])
-                            ->whereIn('date', [$this->today, $this->yesterday])
+        $yesterday = $this->yesterday;
+        $cementPurchases = CementPurchase::where(['site_id' => 0, 'status' => 1])
+                            // ->whereIn('date', [$this->today, $yesterday])
                             ->with('getSite', 'getSupplier', 'getEmployee')
+                            ->orderBy('date', 'DESC')
                             ->get();
         // dd($cementPurchases);
-        return View('Godown.CementPurchase.list', compact('cementPurchases'));
+        return View('Godown.CementPurchase.list', compact('cementPurchases', 'yesterday'));
     }
 
     public function createCementPurchase()
     {
         $user = session('godown');
         $role = $user->role;
-        $suppliers = CementSupplier::where(['status' => 1])->orderBy('name')->get();
+        // $suppliers = CementSupplier::where(['status' => 1])->orderBy('name')->get();
+        $suppliers = CementSupplier::where(['status' => '1'])->orderBy('name')->pluck('name', 'id');
+        // dd($suppliers);
         
         //dd($sites);
         $today = $this->today;
@@ -60,7 +63,7 @@ class GodownController extends Controller
         return view('Godown.CementPurchase.create', compact('role', 'user', 'suppliers', 'today', 'yesterday'));
     }
 
-    public static function storeCementPurchase(Request $req, $user)
+    public static function storeCementPurchase(Request $req)
     {
         // dd($req->all());
         $req->validate([
@@ -76,26 +79,27 @@ class GodownController extends Controller
             'supplier_id' => $req->supplier,
             'remark' => $req->remark,
             'site_id' => 0,
-            'employee_id' => $user
+            'employee_id' => session('godown')->id
         ];
         CementPurchase::create($requestData);
         // dd($new_purchase);
         return back()->with('message', 'New "Cement Purchase" created successfully!');
     }
 
-    public function editCementPurchase($user, CementPurchase $cement_purchase)
+    public function editCementPurchase(CementPurchase $cement_purchase)
     {   
         // dd(Schema::getColumnListing('cement_purchase'));
         $user = session('godown');
         $role = $user->role;
         
-        $suppliers = CementSupplier::where(['status' => 1])->orderBy('name')->get();
+        // $suppliers = CementSupplier::where(['status' => 1])->orderBy('name')->get();
+        $suppliers = CementSupplier::where(['status' => '1'])->orderBy('name')->pluck('name', 'id');
         $today = $this->today;
         $yesterday = $this->yesterday;
        return view('Godown.CementPurchase.edit', compact('role', 'user', 'suppliers', 'today', 'yesterday', 'cement_purchase'));
     }
 
-    public function updateCementPurchase(Request $req, $user, CementPurchase $cement_purchase)
+    public function updateCementPurchase(Request $req, CementPurchase $cement_purchase)
     {
         // dd($request);
         // $requestData = $request->validated() + ['employee_id' => $user];
@@ -121,12 +125,14 @@ class GodownController extends Controller
 
     public function listCementOut()
     {
-        
-        $cementOuts = CementOut::with(['getToSite', 'getFromSite'])->where(['status' => 1])
-                        ->whereIn('date', [$this->today, $this->yesterday])
+        $yesterday = $this->yesterday;
+        $cementOuts = CementOut::with(['getToSite', 'getFromSite'])
+                        ->where(['status' => 1, 'from_site_id' => 0])
+                        // ->whereIn('date', [$this->today, $yesterday])
+                        ->orderBy('date', 'DESC')
                         ->get();
         //dd($cementIns);
-        return View('Godown.CementOut.list', compact('cementOuts'));
+        return View('Godown.CementOut.list', compact('cementOuts', 'yesterday'));
     }
 
     public function createCementOut()
@@ -161,7 +167,7 @@ class GodownController extends Controller
         return back()->with('message', 'New "Cement Out" created successfully!');
     }
 
-    public function editCementOut($user, $id)
+    public function editCementOut($id)
     {   
         $cement_out = CementOut::findOrFail($id);
         $user = session('godown');
@@ -172,7 +178,7 @@ class GodownController extends Controller
        return view('Godown.CementOut.edit', compact('role', 'user', 'allsites', 'today', 'yesterday', 'cement_out'));
     }
 
-    public function updateCementOut(Request $request, $user, CementOut $cementOut)
+    public function updateCementOut(Request $request, CementOut $cementOut)
     {
         // dd($request->all(), $user);
         

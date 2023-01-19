@@ -23,7 +23,7 @@
                             @foreach($cementPurchases as $cementPurchase)
                                 <tr>
                                     <th scope="row">
-                                        <div class="question_content">{{ $cementPurchase->date }}</div>
+                                        <div class="question_content">{{ date('d-m-Y', strtotime($cementPurchase->date)) }}</div>
                                     </th>
                                     <td>{{ $cementPurchase->bags }}</td>
                                     <td>{{ $cementPurchase->supplier_id .' ' .$cementPurchase->getSupplier->name }}</td>

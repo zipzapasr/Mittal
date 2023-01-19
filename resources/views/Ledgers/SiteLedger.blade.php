@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 <style>
-    td,th, tr {
+    td,th {
         text-align: center;
     }
 </style>
@@ -16,7 +16,7 @@
 
             <div class="white_card_body">
 
-                <h2 style="padding: 20px 0px" id="siteName">Site Ledger</h2>
+                <h2 style="padding: 20px 0px" id="siteName">Site Stock Record</h2>
 
                 <h4>Filter</h4>
 
@@ -131,7 +131,7 @@
 
             $('.white_card_body').find('.mytable').html('');
 
-            $('.white_card_body').find('.mytable').html('<table id="table" class="table table-strip container"> <thead id="thead"> </thead> <tbody id="tbody"> </tbody> </table>')
+            $('.white_card_body').find('.mytable').html('<table id="table" class="table table-strip container cell-border compact"> <thead id="thead"> </thead> <tbody id="tbody"> </tbody> </table>')
 
 
 
@@ -167,7 +167,7 @@
 
 
 
-                        $('#siteName').append('Site Ledger: ' + '<span class="text-success">' + res.site.site_name + '</span>')
+                        $('#siteName').append('Site Stock Record: ' + '<span class="text-success">' + res.site.site_name + '</span>')
 
                         //console.log(res.data);
 

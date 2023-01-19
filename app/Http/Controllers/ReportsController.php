@@ -82,6 +82,7 @@ class ReportsController extends Controller
                     ->where('field_type_id', '!=', '4')
                     ->get()
                     ->groupBy(['activity_id', 'field_type_id', 'progress_date' ]);
+        // dd($site);
         $site_name = Sites::where('id', $request->site)->first()->site_name;                        
         return response()->json(['data' => $site, 'request' => $request->all(), 'site_name' => $site_name], 200);
     }

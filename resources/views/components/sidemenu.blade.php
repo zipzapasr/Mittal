@@ -3,7 +3,7 @@
         text-decoration: none;
     }
 </style>
-<nav class="sidebar vertical-scroll  ps-container ps-theme-default ps-active-y">
+<nav class="sidebar vertical-scroll  ps-container ps-theme-default ps-active-y">{{--style="width: 20%"--}}
             <div class="logo d-flex justify-content-between">
                 <a href="{{ route('home') }}">
                     <img src="{{ asset('SuryaConstructorsLogo.png') }}" alt="">
@@ -14,7 +14,7 @@
                 </div>
             </div>
             <ul id="sidebar_menu">
-                <li class="">
+                {{-- <li class="">
                     <a class="has-arrow" href="#" aria-expanded="false">
                         <div class="icon_menu">
                             <img src="{{ asset('admin/img/menu-icon/2.svg') }}" alt="">
@@ -29,7 +29,7 @@
                             <a href="{{ route('login.project_manager') }}">Project Manager</a>
                         </li>
                     </ul>
-                </li>
+                </li> --}}
                 <li class="mm-active">
                     <a class="" href="{{ route('home') }}" aria-expanded="false">
                         <div class="icon_menu">
@@ -140,14 +140,14 @@
                         <div class="icon_menu">
                             <img src="{{ asset('admin/img/menu-icon/3.svg') }}" alt="">
                         </div>
-                        <span>Reports</span>
+                        <span>Site Progress Reports</span>
                     </a>
                     <ul>
                         <li>
-                            <a href="{{ route('view.siteReport') }}">Site Report</a>
+                            <a href="{{ route('view.siteReport') }}">Progress Report w/o P/C</a>
                         </li>
                         <li>
-                            <a href="{{ route('view.siteTotalReport') }}">Site Total Report</a>
+                            <a href="{{ route('view.siteTotalReport') }}">Progress Report w P/C</a>
                         </li>
                         <li>
                             <a href="{{ route('view.contractorReport') }}">Petty Contractor Report</a>
@@ -200,7 +200,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="">
+                {{-- <li class="">
                     <a class="has-arrow" href="#" aria-expanded="false">
                         <div class="icon_menu">
                             <img src="{{ asset('admin/img/menu-icon/3.svg') }}" alt="">
@@ -215,20 +215,20 @@
                             <a href="{{ route('create.sitetransfer') }}">Create</a>
                         </li>
                     </ul>
-                </li>
+                </li> --}}
                 <li class="">
                     <a class="has-arrow" href="#" aria-expanded="false">
                         <div class="icon_menu">
                             <img src="{{ asset('admin/img/menu-icon/3.svg') }}" alt="">
                         </div>
-                        <span>Cement Ledger</span>
+                        <span>Cement Record</span>
                     </a>
                     <ul>
                         <li>
-                            <a href="{{ route('view.siteLedger') }}">Site Ledger</a>
+                            <a href="{{ route('view.siteLedger') }}">Site Stock Record</a>
                         </li>
                         <li>
-                            <a href="{{ route('view.allLedger') }}">All Ledger</a>
+                            <a href="{{ route('view.allLedger') }}">Summary Report</a>
                         </li>
                     </ul>
                 </li>

@@ -33,7 +33,7 @@
 <div class="row">
 <div class="col-lg-6">
 <div class="dashboard_header_title">
-<h3>Login As Godown</h3>
+<h3>Login for Godown</h3>
 </div>
 </div>
 </div>

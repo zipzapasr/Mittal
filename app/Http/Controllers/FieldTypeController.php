@@ -37,6 +37,9 @@ class FieldTypeController extends Controller
     
     public function updateFieldType( Request $request ){
         $field_type = FieldType::findOrFail($request->id);
+        $request->validate([
+            'title' => "required|unique:field_types,title,{$field_type->id}"
+        ]);
         $field_type->update(['title' => $request->title]);
         Session::flash('message' , 'FieldType Updated Successfully');
         return back();
@@ -45,7 +48,7 @@ class FieldTypeController extends Controller
     public function save(Request $request){
         //dd($request->all());
         $request->validate([
-            'title' => 'required'
+            'title' => 'required|unique:field_types'
         ]);
         $field_data = [
             'title' => $request->title

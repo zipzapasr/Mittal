@@ -2,3 +2,7 @@
 Stack trace:
 #0 {main}
   thrown in /home/ripunaae/public_html/mittal/database/seeders/DatabaseSeeder.php on line 8
+[14-Jan-2023 18:23:03 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Seeder" not found in /home/ripunaae/public_html/mittal/database/seeders/DatabaseSeeder.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/database/seeders/DatabaseSeeder.php on line 8

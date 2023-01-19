@@ -45,7 +45,7 @@
 
                                     <th scope="row">
 
-                                        <div class="question_content">{{ $cementTransfer->date }}</div>
+                                        <div class="question_content">{{ date('d-m-Y', strtotime($cementTransfer->date)) }}</div>
 
                                     </th>
 

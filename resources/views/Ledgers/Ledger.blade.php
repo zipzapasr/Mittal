@@ -3,6 +3,7 @@
 <style>
     td,th, tr {
         text-align: center;
+        justify-items: center;
     }
 </style>
 
@@ -164,8 +165,8 @@
                         var receivedTotal = '<tr> <th style="font-weight: bold;">Received</th>'
                         var purchaseTotal = '<tr> <th style="font-weight: bold;">Purchased</th>'
                         var consumptionTotal = '<tr> <th style="font-weight: bold;">Consumption</th>'
-                        var transferTotal = '<tr> <th style="font-weight: bold;">Transferred</th>'
-                        var transferredToClientTotal = '<tr> <th style="font-weight: bold;">Transferred To Client</th>'
+                        var transferTotal = '<tr> <th style="font-weight: bold;">Transferr</th>'
+                        var transferredToClientTotal = '<tr> <th style="font-weight: bold;">Transferr To Client</th>'
                         var closingTotal = '<tr> <th style="font-weight: bold;">Closing Stock</th> '
                         var wastageTotal = '<tr> <th style="font-weight: bold;">Wastage</th> '
 

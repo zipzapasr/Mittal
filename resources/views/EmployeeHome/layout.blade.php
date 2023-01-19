@@ -2,16 +2,16 @@
 <html lang="zxx">
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     @include('./components/head')
-    <body class="crm_body_bg">
+    <body class="crm_body_bg" >
         @include('./EmployeeHome/sidebarmenu')
-        <section class="main_content dashboard_part large_header_bg">
+        <section class="main_content dashboard_part large_header_bg" style="width: 100%">
             @include('./components/header')
             <div style="text-align:right;" class="m-2">
                 <a class="btn btn-danger" href="{{ route('employee.logout') }}" style="border: 3px solid black;">
                     <i class="bi bi-door-closed">Logout</i>
                 </a>
             </div>
-           
+        
             <div class="main_content_iner overly_inner ">
                 <div class="container-fluid p-0 ">
                     <div class="row">
@@ -45,6 +45,7 @@
                 </div>
             </div>
         </section>
+        
  
         @include('./components/footer')
        

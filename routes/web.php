@@ -227,18 +227,18 @@ Route::group(['middleware' => 'godownAuth'], function() {
 
 
     //Cement Purchase
-    Route::get('/godown/{user}/cementPurchase', [GodownController::class, 'createCementPurchase'])->name('create.godown.cementPurchase');
-    Route::get('/godown/{user}/list/cementPurchase', [GodownController::class, 'listCementPurchase'])->name('list.godown.cementPurchase');
-    Route::post('/godown/{user}/cementPurchase', [GodownController::class, 'storeCementPurchase'])->name('store.godown.cementPurchase');
-    Route::get('/godown/{user}/cementPurchase/{cement_purchase}', [GodownController::class, 'editCementPurchase'])->name('edit.godown.cementPurchase');
-    Route::post('/godown/{user}/cementPurchase/{cement_purchase}', [GodownController::class, 'updateCementPurchase'])->name('update.godown.cementPurchase');
+    Route::get('/godown/cementPurchase', [GodownController::class, 'createCementPurchase'])->name('create.godown.cementPurchase');
+    Route::get('/godown/list/cementPurchase', [GodownController::class, 'listCementPurchase'])->name('list.godown.cementPurchase');
+    Route::post('/godown/cementPurchase', [GodownController::class, 'storeCementPurchase'])->name('store.godown.cementPurchase');
+    Route::get('/godown/cementPurchase/{cement_purchase}', [GodownController::class, 'editCementPurchase'])->name('edit.godown.cementPurchase');
+    Route::post('/godown/cementPurchase/{cement_purchase}', [GodownController::class, 'updateCementPurchase'])->name('update.godown.cementPurchase');
 
     //Cement Out
-    Route::get('/godown/{user}/cementOut', [GodownController::class, 'createCementOut'])->name('create.godown.cementOut');
-    Route::get('/godown/{user}/list/cementOut', [GodownController::class, 'listCementOut'])->name('list.godown.cementOut');
-    Route::post('/godown/{user}/cementOut', [GodownController::class, 'storeCementOut'])->name('store.godown.cementOut');
-    Route::get('/godown/{user}/cementOut/{cementOut}', [GodownController::class, 'editCementOut'])->name('edit.godown.cementOut');
-    Route::post('/godown/{user}/cementOut/{cementOut}', [GodownController::class, 'updateCementOut'])->name('update.godown.cementOut');
+    Route::get('/godown/cementOut', [GodownController::class, 'createCementOut'])->name('create.godown.cementOut');
+    Route::get('/godown/list/cementOut', [GodownController::class, 'listCementOut'])->name('list.godown.cementOut');
+    Route::post('/godown/cementOut', [GodownController::class, 'storeCementOut'])->name('store.godown.cementOut');
+    Route::get('/godown/cementOut/{cementOut}', [GodownController::class, 'editCementOut'])->name('edit.godown.cementOut');
+    Route::post('/godown/cementOut/{cementOut}', [GodownController::class, 'updateCementOut'])->name('update.godown.cementOut');
 
 });
 

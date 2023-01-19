@@ -1,0 +1,88 @@
+[14-Jan-2023 18:35:13 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/ripunaae/public_html/mittal/app/Http/Controllers/ActivityController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/app/Http/Controllers/ActivityController.php on line 11
+[14-Jan-2023 18:35:13 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/ripunaae/public_html/mittal/app/Http/Controllers/AdminSiteLogController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/app/Http/Controllers/AdminSiteLogController.php on line 9
+[14-Jan-2023 18:35:13 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/ripunaae/public_html/mittal/app/Http/Controllers/CementInController.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/app/Http/Controllers/CementInController.php on line 13
+[14-Jan-2023 18:35:13 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/ripunaae/public_html/mittal/app/Http/Controllers/CementOutController.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/app/Http/Controllers/CementOutController.php on line 13
+[14-Jan-2023 18:35:13 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/ripunaae/public_html/mittal/app/Http/Controllers/CementSupplierController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/app/Http/Controllers/CementSupplierController.php on line 9
+[14-Jan-2023 18:35:13 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/ripunaae/public_html/mittal/app/Http/Controllers/CementPurchaseController.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/app/Http/Controllers/CementPurchaseController.php on line 14
+[14-Jan-2023 18:35:14 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Routing\Controller" not found in /home/ripunaae/public_html/mittal/app/Http/Controllers/Controller.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/app/Http/Controllers/Controller.php on line 10
+[14-Jan-2023 18:35:14 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/ripunaae/public_html/mittal/app/Http/Controllers/CementTransferController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/app/Http/Controllers/CementTransferController.php on line 12
+[14-Jan-2023 18:35:14 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/ripunaae/public_html/mittal/app/Http/Controllers/EditAccessController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/app/Http/Controllers/EditAccessController.php on line 8
+[14-Jan-2023 18:35:14 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/ripunaae/public_html/mittal/app/Http/Controllers/ContractorController.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/app/Http/Controllers/ContractorController.php on line 10
+[14-Jan-2023 18:35:14 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/ripunaae/public_html/mittal/app/Http/Controllers/EmployeeController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/app/Http/Controllers/EmployeeController.php on line 11
+[14-Jan-2023 18:35:14 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/ripunaae/public_html/mittal/app/Http/Controllers/FieldTypeController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/app/Http/Controllers/FieldTypeController.php on line 11
+[14-Jan-2023 18:35:14 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/ripunaae/public_html/mittal/app/Http/Controllers/EmployeeHomeController.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/app/Http/Controllers/EmployeeHomeController.php on line 24
+[14-Jan-2023 18:35:15 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/ripunaae/public_html/mittal/app/Http/Controllers/GodownController.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/app/Http/Controllers/GodownController.php on line 16
+[14-Jan-2023 18:35:15 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/ripunaae/public_html/mittal/app/Http/Controllers/LoginController.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/app/Http/Controllers/LoginController.php on line 10
+[14-Jan-2023 18:35:15 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/ripunaae/public_html/mittal/app/Http/Controllers/HomeController.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/app/Http/Controllers/HomeController.php on line 20
+[14-Jan-2023 18:35:15 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/ripunaae/public_html/mittal/app/Http/Controllers/ReportsController.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/app/Http/Controllers/ReportsController.php on line 16
+[14-Jan-2023 18:35:15 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/ripunaae/public_html/mittal/app/Http/Controllers/SiteContractorController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/app/Http/Controllers/SiteContractorController.php on line 8
+[14-Jan-2023 18:35:16 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/ripunaae/public_html/mittal/app/Http/Controllers/SiteEntryController.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/app/Http/Controllers/SiteEntryController.php on line 7
+[14-Jan-2023 18:35:16 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/ripunaae/public_html/mittal/app/Http/Controllers/SiteTransferController.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/app/Http/Controllers/SiteTransferController.php on line 10
+[14-Jan-2023 18:35:16 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/ripunaae/public_html/mittal/app/Http/Controllers/SiteController.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/app/Http/Controllers/SiteController.php on line 20
+[14-Jan-2023 18:35:16 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/ripunaae/public_html/mittal/app/Http/Controllers/UnitController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/app/Http/Controllers/UnitController.php on line 9

@@ -18,29 +18,53 @@ class ContractorController extends Controller
     public function create()
     {
         //$contractortlist = Contractor::all();
-        return View('Contractor.create'); //compact('contractorlist')
+        $identification_types = app(Contractor::class)->identification_types;
+        return View('Contractor.create', compact('identification_types')); 
+
     }
 
     public function save(ContractorRequest $request){
-        $requestData = $request->validated() + [
+        // dd($request->all());
+        $request->validate([
+            'identification' => 'required'
+        ]);
+        $identification = $request->identification->store('identifications', 'public');
+        $requestData =  [
+            'business_name' => $request->business_name,
+            'name' => $request->name,
+            'mobile' => $request->mobile,
+            'identification_type' => $request->identification_type,
             'details' => $request->details,
+            'identification' => $identification,
             'status' => 1
         ];
-        Contractor::create($requestData);
+        $contractor = Contractor::create($requestData);
+        dd($contractor);
         Session::flash('message', 'Contractor created successfully!');
         return back();
     }
 
     public function editContractor(Contractor $contractor)
     {
-        return View( 'Contractor.edit', compact('contractor'));
+        $identification_types = app(Contractor::class)->identification_types;
+        return View( 'Contractor.edit', compact('contractor','identification_types'));
     }
 
     public function updateContractor(ContractorRequest $request)
     {
         $contractor = Contractor::findOrFail($request->contractorId);
-        $requestData = $request->validated() + [
+        if($request->identification){
+            $identification = $request->identification->store('identifications', 'public');
+        } else {
+            $identification = $contractor->identification;
+        }
+        $requestData =  [
+            'business_name' => $request->business_name,
+            'name' => $request->name,
+            'mobile' => $request->mobile,
+            'identification_type' => $request->identification_type,
             'details' => $request->details,
+            'identification' => $identification,
             'status' => 1
         ];
         $contractor->update($requestData);

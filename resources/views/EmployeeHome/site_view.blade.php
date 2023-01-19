@@ -14,6 +14,7 @@
             font-size: 75%;
         }
     </style>
+{{-- {{dd($contractors)}} --}}
 
 @section('content')
     @php
@@ -60,7 +61,7 @@
         <div class="row mt-3"> {{-- today --}}
             <h5 style="font: bold;">Site Entries
                 {{-- <select name="progress_date" id="progress_date" class="form-control"></select> --}}
-                Today: {{ $today }}
+                Today: {{ date('d-m-Y', strtotime($today)) }}
             </h5>
             @if($submitted['today'] == 'true')
             <div class="row">
@@ -121,7 +122,10 @@
                                     <td class="col-sm-1">
                                         <select {{($entry->field_type_id != '4') ? 'disabled' : ''}} name="contractor[]" id="selectContractorT" class="form-control selectedContractorT">
                                             @foreach($contractors as $k => $v)
-                                            <option value="{{ $v->contractor_id }}" class="form-control" {{ ($v->contractor_id == $entry->contractor_id) ? 'selected' : '' }}>{{ $v->getContractor->business_name }}</option>
+                                                @if($v->getContractor)
+                                                    <option value="{{ $v->contractor_id }}" class="form-control" {{ ($v->contractor_id == $entry->contractor_id) ? 'selected' : '' }}>{{ $v->getContractor->business_name }}</option>
+                                                @endif
+                                            
                                             @endforeach
                                         </select>
                                     </td>
@@ -228,7 +232,7 @@
         <div class="row mt-3"> {{-- yesterday --}}
             <h5 style="font: bold;">Site Entries
                 {{-- <select name="progress_date" id="progress_date" class="form-control"></select> --}}
-                Yesterday: {{ $yesterday }}
+                Yesterday: {{ date('d-m-Y', strtotime($yesterday)) }}
             </h5>
             @if($submitted['yesterday'] == 'true')
                 <div class="row">
@@ -289,7 +293,9 @@
                                     <td class="col-sm-1">
                                         <select {{($entry->field_type_id != '4') ? 'disabled' : ''}} name="contractor[]" id="selectContractorY" class="form-control selectedContractorY">
                                             @foreach($contractors as $k => $v)
-                                            <option value="{{ $v->contractor_id }}" class="form-control" {{ ($v->contractor_id == $entry->contractor_id) ? 'selected' : '' }}>{{ $v->getContractor->business_name }}</option>
+                                                @if($v->getContractor)
+                                                    <option value="{{ $v->contractor_id }}" class="form-control" {{ ($v->contractor_id == $entry->contractor_id) ? 'selected' : '' }}>{{ $v->getContractor->business_name }}</option>
+                                                @endif
                                             @endforeach
                                         </select>
                                     </td>
@@ -516,10 +522,14 @@
                 var c = entryCountT.toString();
                 var name= "images" + c + "[]";
 
-                $('.appendedRowT').append(`<tr class="row"><td style="text-transform: capitalize;" class="col-sm-1"> <select class="form-control select2" id="selectActivity" name="selectActivity[]" required style="text-transform: capitalize; width:100%;"> <option value="0" attunit="">Select</option>@foreach($activity as $k => $v) <option class="form-control" attunit="{{ $v->getActivity->getunits->title }}" value="{{ $v->getActivity->id }}"> {{ $v->getActivity->activity_name }} </option> @endforeach </select> </td> <td style="text-transform: capitalize;padding-top: 20px;" class="unitname col-md-1"> </td> <td class="col-sm-1"> <input type="number" class="form-control" name="qty[]" required min="0"/> </td> <td class="col-lg-1"><input type="text" class="form-control" name="remark[]" required></td> <td class="col-sm-1"> <select class="form-control select2" id="field_typeT" name="field_type[]" required style="text-transform: capitalize;"> @foreach($field_types as $k => $v) <option class="form-control p-1" value="{{ $v->id }}"> {{ $v->title }} </option> @endforeach </select> </td> <td class="col-sm-1"> <select  name="contractor[]" id="selectContractorT" class="form-control selectedContractorT select2"> @foreach($contractors as $k => $v) <option value="{{ $v->contractor_id }}" {{($v->contractor_id == "4") ? "selected" : ""}} class="form-control">{{ $v->getContractor->business_name }}</option> @endforeach </select> </td> <td class="col-sm-1"><input type="number" class="form-control" name="sw[]" required min="0"/></td> <td class="col-sm-1"><input type="number" class="form-control" name="swo[]" value="0" min="0"/></td> <td class="col-sm-1"><input type="number" class="form-control" name="usw[]" value="0" min="0"/></td> <td class="col-sm-1"><input type="number" class="form-control" name="uswo[]" value="0" min="0"/></td> <td class="col-sm-1"><input type="number" class="form-control" name="cement_bags[]" value="0" min="0"/></td> <td class="col-sm-1"> <input type="file" class="form-control" multiple name="${name}" value=""></tr>`);
+                {{-- $("select").select2(); --}}
+
+                $('.appendedRowT').append(`<tr class="row"><td style="text-transform: capitalize;" class="col-sm-1"> <select class="form-control selectT${c}" id="selectActivity" name="selectActivity[]" required style="text-transform: capitalize; width:100%;"> <option value="0" attunit="">Select</option>@foreach($activity as $k => $v) <option class="form-control" attunit="{{ $v->getActivity->getunits->title }}" value="{{ $v->getActivity->id }}"> {{ $v->getActivity->activity_name }} </option> @endforeach </select> </td> <td style="text-transform: capitalize;padding-top: 20px;" class="unitname col-md-1"> </td> <td class="col-sm-1"> <input type="number" class="form-control" name="qty[]" required min="0"/> </td> <td class="col-lg-1"><input type="text" class="form-control" name="remark[]" required></td> <td class="col-sm-1"> <select class="form-control selectT${c}" id="field_typeT" name="field_type[]" required style="text-transform: capitalize;"> @foreach($field_types as $k => $v) <option class="form-control p-1" value="{{ $v->id }}"> {{ $v->title }} </option> @endforeach </select> </td> <td class="col-sm-1"> <select  name="contractor[]" id="selectContractorT" class="form-control selectedContractorT selectT${c}"> @foreach($contractors as $k => $v) @if($v->getContractor) <option value="{{ $v->contractor_id }}" {{($v->contractor_id == "4") ? "selected" : ""}} class="form-control">{{ $v->getContractor->business_name }}</option> @endif @endforeach </select> </td> <td class="col-sm-1"><input type="number" class="form-control" name="sw[]" required min="0"/></td> <td class="col-sm-1"><input type="number" class="form-control" name="swo[]" value="0" min="0"/></td> <td class="col-sm-1"><input type="number" class="form-control" name="usw[]" value="0" min="0"/></td> <td class="col-sm-1"><input type="number" class="form-control" name="uswo[]" value="0" min="0"/></td> <td class="col-sm-1"><input type="number" class="form-control" name="cement_bags[]" value="0" min="0"/></td> <td class="col-sm-1"> <input type="file" class="form-control" multiple name="${name}" value=""></tr>`);
 
                 {{-- $("select").select2(); --}}
-                $('.select2').select2();
+
+                {{-- $(`.selectT${c}`).select2();
+                console.log($(`.selectT${c}`))       --}}
 
                 entryCountT += 1
 
@@ -535,10 +545,15 @@
                 var c = entryCountY.toString();
                 var name= "images" + c + "[]";
 
-                $('.appendedRowY').append('<tr class="row"><td style="text-transform: capitalize;" class="col-sm-1"> <select class="form-control select2" id="selectActivity" name="selectActivity[]" required style="text-transform: capitalize; width:100%;"> <option value="0" attunit="">Select</option>@foreach($activity as $k => $v) <option class="form-control" attunit="{{ $v->getActivity->getunits->title }}" value="{{ $v->getActivity->id }}"> {{ $v->getActivity->activity_name }} </option> @endforeach </select> </td> <td style="text-transform: capitalize;padding-top: 20px;" class="unitname col-md-1"> </td> <td class="col-sm-1"> <input type="number" class="form-control" name="qty[]" required min="0"/> </td> <td class="col-lg-1"><input type="text" class="form-control" name="remark[]" required></td> <td class="col-sm-1"> <select class="form-control select2" id="field_typeY" name="field_type[]" required style="text-transform: capitalize;"> @foreach($field_types as $k => $v) <option class="form-control p-1" value="{{ $v->id }}"> {{ $v->title }} </option> @endforeach </select> </td> <td class="col-sm-1"> <select name="contractor[]" id="selectContractorY" class="form-control selectedContractorY select2"> @foreach($contractors as $k => $v) <option value="{{ $v->contractor_id }}" {{($v->contractor_id == "4") ? "selected" : ""}}class="form-control">{{ $v->getContractor->business_name }}</option> @endforeach </select> </td> <td class="col-sm-1"><input type="number" class="form-control" name="sw[]" required min="0"/></td> <td class="col-sm-1"><input type="number" class="form-control" name="swo[]" value="0" min="0"/></td> <td class="col-sm-1"><input type="number" class="form-control" name="usw[]" value="0" min="0"/></td> <td class="col-sm-1"><input type="number" class="form-control" name="uswo[]" value="0" min="0"/></td> <td class="col-sm-1"><input type="number" class="form-control" name="cement_bags[]" value="0" min="0"/></td> <td class="col-sm-1"> <input type="file" class="form-control" multiple name="${name}" value="" > </td></tr>');
-
                 {{-- $("select").select2(); --}}
-                $('.select2').select2();
+
+                var newRow = `<tr class="row"><td style="text-transform: capitalize;" class="col-sm-1"> <select class="form-control selectY${c}" id="selectActivity" name="selectActivity[]" required style="text-transform: capitalize; width:100%;"> <option value="0" attunit="">Select</option>@foreach($activity as $k => $v) <option class="form-control" attunit="{{ $v->getActivity->getunits->title }}" value="{{ $v->getActivity->id }}"> {{ $v->getActivity->activity_name }} </option> @endforeach </select> </td> <td style="text-transform: capitalize;padding-top: 20px;" class="unitname col-md-1"> </td> <td class="col-sm-1"> <input type="number" class="form-control" name="qty[]" required min="0"/> </td> <td class="col-lg-1"><input type="text" class="form-control" name="remark[]" required></td> <td class="col-sm-1"> <select class="form-control selectY${c}" id="field_typeY" name="field_type[]" required style="text-transform: capitalize;"> @foreach($field_types as $k => $v) <option class="form-control p-1" value="{{ $v->id }}"> {{ $v->title }} </option> @endforeach </select> </td> <td class="col-sm-1"> <select name="contractor[]" id="selectContractorY" class="form-control selectedContractorY selectY${c}"> @foreach($contractors as $k => $v) @if($v->getContractor) <option value="{{ $v->contractor_id }}" {{($v->contractor_id == "4") ? "selected" : ""}}class="form-control">{{ $v->getContractor->business_name }}</option> @endif @endforeach </select> </td> <td class="col-sm-1"><input type="number" class="form-control" name="sw[]" required min="0"/></td> <td class="col-sm-1"><input type="number" class="form-control" name="swo[]" value="0" min="0"/></td> <td class="col-sm-1"><input type="number" class="form-control" name="usw[]" value="0" min="0"/></td> <td class="col-sm-1"><input type="number" class="form-control" name="uswo[]" value="0" min="0"/></td> <td class="col-sm-1"><input type="number" class="form-control" name="cement_bags[]" value="0" min="0"/></td> <td class="col-sm-1"> <input type="file" class="form-control" multiple name="${name}" value="" > </td></tr>`
+
+                $('.appendedRowY').append(newRow);
+                {{-- $("select").select2(); --}}
+                {{-- console.log($(newRow)) --}}
+
+                {{-- $(`.selectY${c}`).select2(); --}}
                 entryCountY += 1
             });
 
@@ -551,9 +566,11 @@
                         $(this).parent().parent().find('.selectedContractorT').attr('disabled', 'disabled');
                     } else {
                         $(this).parent().parent().find('.selectedContractorT').removeAttr('disabled');
+                        $(this).parent().parent().find('.selectedContractorT').removeClass('invisible')
                     }
                 } else {
                     $(this).parent().parent().find('.selectedContractorT').attr('disabled', 'disabled');
+                    $(this).parent().parent().find('.selectedContractorT').addClass('invisible')
 
                 }
             });
@@ -570,9 +587,11 @@
                         $(this).parent().parent().find('.selectedContractorY').attr('disabled', 'disabled');
                     } else {
                         $(this).parent().parent().find('.selectedContractorY').removeAttr('disabled');
+                        $(this).parent().parent().find('.selectedContractorY').removeClass('invisible')
                     }
                 } else {
                     $(this).parent().parent().find('.selectedContractorY').attr('disabled', 'disabled');
+                    $(this).parent().parent().find('.selectedContractorY').addClass('invisible')
 
                 }
             });

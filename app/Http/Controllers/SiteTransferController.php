@@ -21,7 +21,7 @@ class SiteTransferController extends Controller
     public function create()
     {
         //$contractortlist = Contractor::all();
-        $sitetransferlist = Sites::orderBy('site_name')->get();
+        $sitetransferlist = Sites::where(['status' => '1'])->orderBy('site_name')->get();
         return View('SiteTransfer.create', compact('sitetransferlist'));
     }
 
@@ -48,7 +48,7 @@ class SiteTransferController extends Controller
 
     public function editSiteTransfer(SiteTransfer $sitetransfer)
     {
-        $sitetransferlist = Sites::orderBy('site_name')->get();
+        $sitetransferlist = Sites::where(['status' => '1'])->orderBy('site_name')->get();
         return View('SiteTransfer.edit', compact('sitetransfer', 'sitetransferlist'));
     }
 

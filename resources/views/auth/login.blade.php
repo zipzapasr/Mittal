@@ -17,17 +17,17 @@
             <div class="row m-2">
                 <div class="col-md-4 col-md-offset-2">
                     <a class="btn btn-primary" href="{{ route('login.project_manager') }}">
-                        {{ __('Login as Project Manager') }}
+                        {{ __('Login for Site') }}
                     </a>
                 </div>
                 <div class="col-md-4 col-md-offset-2">
                     <a class="btn btn-primary" href="{{ route('login.data_entry_operator') }}">
-                        {{ __('Login as Data Entry Operator') }}
+                        {{ __('Login for Site Data Entry Operator') }}
                     </a>
                 </div>
                 <div class="col-md-4 col-md-offset-2">
                     <a class="btn btn-primary" href="{{ route('login.godown') }}">
-                        {{ __('Login as Godown') }}
+                        {{ __('Login for Godown') }}
                     </a>
                 </div>
             </div>

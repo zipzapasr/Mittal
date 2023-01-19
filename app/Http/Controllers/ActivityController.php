@@ -12,12 +12,19 @@ class ActivityController extends Controller
 { 
     public function create()
     {
-        $unitlist = Unit::all();
+        $unitlist = Unit::where(['status' => '1'])->get();
         $activity_types_list = DB::table('activity_types')->get();
         return View('Activity.create', compact('unitlist', 'activity_types_list'));
     }
     public function save(Request $request){
         //dd($request);
+        $request->validate([
+            'activity_name' => 'required',
+            'activity_description' => 'required',
+            'unit' => 'required',
+            'activity_type' => 'required'
+        ]);
+
         $activityName = $request->activity_name;
         $activity_description = $request->activity_description;
         $unit = $request->unit;
@@ -60,11 +67,18 @@ class ActivityController extends Controller
     public function editActivity(Activity $activity)
     {
         $activity_types_list = DB::table('activity_types')->get();
-        $unitlist = Unit::all();
+        $unitlist = Unit::where(['status' => '1'])->get();
         return View( 'Activity.edit', compact('activity', 'activity_types_list', 'unitlist'));
     }
     public function updateActivity(Request $request, Activity $activity)
     {
+        $request->validate([
+            'activity_name' => 'required',
+            'activity_description' => 'required',
+            'unit' => 'required',
+            'activity_type' => 'required'
+        ]);
+        
         $requestData = [
                 'activity_name' => $request->activity_name,
                 'activity_description' => $request->activity_description,

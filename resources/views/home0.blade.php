@@ -32,27 +32,9 @@
                                         <tr class="mt-1 mb-1">
                                             <td>
                                                 <div class="payment_gatway row">
+                                                    <h4 class="byer_name  f_s_16 f_w_700 color_theme col-md-4"><a href="list/site/{{ $entries[0]->getSite->id }}">{{ $entries[0]->getSite->serial_no }} {{ $entries[0]->getSite->site_name }}</a></h4>
                                                     <h5 class="col-md-4">Date: {{date('d-m-Y', strtotime($date))}}</h5>
                                                     <h5 class="col-md-4">Submitted By: {{ $entries[0]->getSite->projectManager->name }} </h5>
-                                                    <form action="{{route('list.site.filter', ['site' => $entries[0]->getSite->id ])}}" method="POST">
-                                                        @csrf
-                                                        <input type="hidden" value="{{$date}}" name="from" />
-                                                        <input type="hidden" value="{{$date}}" name="from" />
-                                                        <div class="row">
-                                                            <div class="col-md-4">
-                                                                <h4 class="byer_name  f_s_16 f_w_700 color_theme col-md-4">
-                                                                {{ $entries[0]->getSite->serial_no }} {{ $entries[0]->getSite->site_name }}
-                                                                </h4>
-                                                            </div>
-                                                            <div class="col-md-4">
-                                                                <button type="submit" class="btn btn-primary">See Entires</button>
-                                                            </div>
-                                                        <div>
-                                                        
-                                                        
-                                                    </form>
-                                                    
-                                                    
                                                 </div>
                                             </td>
                                         </tr>

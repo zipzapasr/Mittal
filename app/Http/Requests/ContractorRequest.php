@@ -27,6 +27,8 @@ class ContractorRequest extends FormRequest
             "business_name" => "required",
             "name" => "required",
             "mobile" => "required|min:10|max:10",
+            'identification_type' => 'required',
+            // 'identification' => 'required'
         ];
     }
 }

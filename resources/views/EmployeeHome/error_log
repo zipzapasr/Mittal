@@ -1,0 +1,6 @@
+[14-Jan-2023 18:51:15 Asia/Kolkata] PHP Warning:  Undefined variable $entryCountT in /home/ripunaae/public_html/mittal/resources/views/EmployeeHome/site_view.blade.php on line 431
+[14-Jan-2023 18:51:15 Asia/Kolkata] PHP Warning:  Undefined variable $entryCountY in /home/ripunaae/public_html/mittal/resources/views/EmployeeHome/site_view.blade.php on line 434
+[14-Jan-2023 18:51:15 Asia/Kolkata] PHP Warning:  Undefined variable $submitted in /home/ripunaae/public_html/mittal/resources/views/EmployeeHome/site_view.blade.php on line 464
+[14-Jan-2023 18:51:15 Asia/Kolkata] PHP Warning:  Trying to access array offset on value of type null in /home/ripunaae/public_html/mittal/resources/views/EmployeeHome/site_view.blade.php on line 464
+[14-Jan-2023 18:51:15 Asia/Kolkata] PHP Warning:  Undefined variable $submitted in /home/ripunaae/public_html/mittal/resources/views/EmployeeHome/site_view.blade.php on line 465
+[14-Jan-2023 18:51:15 Asia/Kolkata] PHP Warning:  Trying to access array offset on value of type null in /home/ripunaae/public_html/mittal/resources/views/EmployeeHome/site_view.blade.php on line 465

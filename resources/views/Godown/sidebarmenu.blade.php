@@ -47,9 +47,9 @@
 
                     <ul>
 
-                        <li><a href="{{ route('list.godown.cementOut', ['user' => session('godown')]) }}">List</a></li>
+                        <li><a href="{{ route('list.godown.cementOut') }}">List</a></li>
 
-                        <li><a href="{{ route('create.godown.cementOut', ['user' => session('godown')]) }}" >Create</a></li>
+                        <li><a href="{{ route('create.godown.cementOut') }}" >Create</a></li>
 
                     </ul>
 
@@ -73,9 +73,9 @@
 
                     <ul>
 
-                        <li><a href="{{ route('list.godown.cementPurchase', ['user' => session('godown')]) }}">List</a></li>
+                        <li><a href="{{ route('list.godown.cementPurchase') }}">List</a></li>
 
-                        <li><a href="{{ route('create.godown.cementPurchase', ['user' => session('godown')]) }}" >Create</a></li>
+                        <li><a href="{{ route('create.godown.cementPurchase') }}" >Create</a></li>
 
                     </ul>
 

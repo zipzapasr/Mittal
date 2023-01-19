@@ -57,6 +57,7 @@
                 //console.log('clicked')
 
                 var token = $('input[name=csrf_token]').val();
+                //console.log(token)
                 // var site = $('select[name=site]').find('option:selected').val();
                 var from = $('input[name=from]').val();
                 var to = $('input[name=to]').val();
@@ -86,7 +87,6 @@
                                     $('tbody').append('<tr>' + '<th>' + cement_in.date + '</th>' + '<th>' + cement_in.get_to_site.site_name + '</th>' + '<th>' + (cement_in.from_site_id == 0 ? 'Godown' : cement_in.get_from_site.site_name) + '</th>' + '<th>' + cement_in.bags + '</th>' + '</tr>');
                                 }
                             });
-
 
                             setTimeout(function() {
                                 $('#table').dataTable({

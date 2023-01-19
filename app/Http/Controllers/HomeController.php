@@ -15,6 +15,7 @@ use App\Models\User;
 use Session;
 use Carbon\Carbon;
 use Mail;
+use Hash;
 
 class HomeController extends Controller
 {
@@ -172,6 +173,16 @@ class HomeController extends Controller
         $editAccess->update([
             'status' => 1
         ]);
+        if($editAccess->key == '0'){
+            //because we changed status of all entries of that day of that site to '0' when giving edit access
+            $entries = SiteEntry::where(['site_id' => $site->id, 'progress_date' => $editAcess->date])
+                        ->each(function($entry){
+                            $entry->update([
+                                'status' => '1'
+                            ]);
+                        });
+        }
+        
         return back()->with('message', "Edit Access for Site {$editAccess->getSite->site_name} for date {$editAccess->date} has been revoked");
     }
 

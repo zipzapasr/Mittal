@@ -94,3 +94,51 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in /home/ripunaae/public_html/mittal/routes/web.php on line 7
+[14-Jan-2023 18:22:17 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Route" not found in /home/ripunaae/public_html/mittal/routes/api.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/routes/api.php on line 17
+[14-Jan-2023 18:22:17 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Broadcast" not found in /home/ripunaae/public_html/mittal/routes/channels.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/routes/channels.php on line 16
+[14-Jan-2023 18:22:18 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Route" not found in /home/ripunaae/public_html/mittal/routes/web.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/routes/web.php on line 7
+[14-Jan-2023 18:22:18 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Artisan" not found in /home/ripunaae/public_html/mittal/routes/console.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/routes/console.php on line 17
+[18-Jan-2023 14:47:29 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Route" not found in /home/ripunaae/public_html/mittal/routes/web.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/routes/web.php on line 7
+[18-Jan-2023 14:47:39 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Artisan" not found in /home/ripunaae/public_html/mittal/routes/console.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/routes/console.php on line 17
+[18-Jan-2023 14:47:49 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Broadcast" not found in /home/ripunaae/public_html/mittal/routes/channels.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/routes/channels.php on line 16
+[18-Jan-2023 14:47:58 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Route" not found in /home/ripunaae/public_html/mittal/routes/api.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/routes/api.php on line 17
+[18-Jan-2023 15:42:32 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Broadcast" not found in /home/ripunaae/public_html/mittal/routes/channels.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/routes/channels.php on line 16
+[18-Jan-2023 15:42:48 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Route" not found in /home/ripunaae/public_html/mittal/routes/api.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/routes/api.php on line 17
+[18-Jan-2023 15:43:03 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Route" not found in /home/ripunaae/public_html/mittal/routes/web.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/routes/web.php on line 7
+[18-Jan-2023 15:43:17 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Artisan" not found in /home/ripunaae/public_html/mittal/routes/console.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/routes/console.php on line 17

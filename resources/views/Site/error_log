@@ -1,0 +1,2 @@
+[14-Jan-2023 18:51:23 Asia/Kolkata] PHP Warning:  Undefined variable $site in /home/ripunaae/public_html/mittal/resources/views/Site/edit.blade.php on line 221
+[14-Jan-2023 18:51:23 Asia/Kolkata] PHP Warning:  Attempt to read property "site_admin" on null in /home/ripunaae/public_html/mittal/resources/views/Site/edit.blade.php on line 221

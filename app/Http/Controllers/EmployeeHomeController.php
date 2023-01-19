@@ -141,7 +141,7 @@ class EmployeeHomeController extends Controller
 
         $activity = (Sites::where('id', $site->id)->with(['getSiteActivity' => function ($query) {
             return $query->with(['getActivity' => function ($query) {
-                return $query->With('getUnits')->get();
+                return $query->with('getUnits')->get();
             }])->get(); // activities that are selected by the admin for this site
         }])->first())->getSiteActivity;
 

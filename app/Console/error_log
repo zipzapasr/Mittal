@@ -2,3 +2,7 @@
 Stack trace:
 #0 {main}
   thrown in /home/ripunaae/public_html/mittal/app/Console/Kernel.php on line 8
+[14-Jan-2023 18:22:39 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Console\Kernel" not found in /home/ripunaae/public_html/mittal/app/Console/Kernel.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/app/Console/Kernel.php on line 8

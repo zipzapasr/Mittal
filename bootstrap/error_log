@@ -34,3 +34,11 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in /home/ripunaae/public_html/mittal/bootstrap/app.php on line 14
+[13-Jan-2023 14:04:10 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Application" not found in /home/ripunaae/public_html/mittal/bootstrap/app.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/bootstrap/app.php on line 14
+[14-Jan-2023 18:18:18 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Application" not found in /home/ripunaae/public_html/mittal/bootstrap/app.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/bootstrap/app.php on line 14

@@ -8,7 +8,7 @@
 
 </style>
 
-<nav class="sidebar vertical-scroll  ps-container ps-theme-default ps-active-y">
+<nav class="sidebar vertical-scroll  ps-container ps-theme-default ps-active-y">{{--style="width: 15%;"--}}
 
             <div class="logo d-flex justify-content-between">
 
@@ -60,19 +60,89 @@
 
                         <span>Cement In</span>
 
+
                     </a>
 
                     <ul>
 
-                        <li><a href="{{ route('list.cementIn', ['user' => session('employee')]) }}">List</a></li>
+                        <li>
+                            <a class="has-arrow" href="#" aria-expanded="false">
+                                <span>In House</span>
+                            </a>
+                            <ul>
 
-                        <li><a href="{{ route('create.cementIn', ['user' => session('employee')]) }}" >Create</a></li>
+                                <li><a href="{{ route('list.cementIn', ['user' => session('employee')]) }}">List</a></li>
+
+                                <li><a href="{{ route('create.cementIn', ['user' => session('employee')]) }}" >Create</a></li>
+
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a class="has-arrow" href="#">
+                                <span>From Supplier</span>
+                            </a>
+                            <ul>
+
+                                <li><a href="{{ route('list.cementPurchase', ['user' => session('employee')]) }}">List</a></li>
+
+                                <li><a href="{{ route('create.cementPurchase', ['user' => session('employee')]) }}" >Create</a></li>
+
+                            </ul>
+                        </li>
 
                     </ul>
 
                 </li>
 
                 <li class="">
+
+                    <a class="has-arrow" href="#" aria-expanded="false">
+
+                        <div class="icon_menu">
+
+                            <img src="{{ asset('admin/img/menu-icon/3.svg') }}" alt="">
+
+                        </div>
+
+                        <span>Cement Out</span>
+
+
+                    </a>
+
+                    <ul>
+
+                        <li>
+                            <a class="has-arrow" href="#" aria-expanded="false">
+                                <span>In House</span>
+                            </a>
+                            <ul>
+
+                                <li><a href="{{ route('list.cementOut', ['user' => session('employee')]) }}">List</a></li>
+
+                                <li><a href="{{ route('create.cementOut', ['user' => session('employee')]) }}" >Create</a></li>
+
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a class="has-arrow" href="#">
+                                <span>Transfer To Client</span>
+                            </a>
+                            <ul>
+
+                                <li><a href="{{ route('list.cementTransfer', ['user' => session('employee')]) }}">List</a></li>
+
+                                <li><a href="{{ route('create.cementTransfer', ['user' => session('employee')]) }}" >Create</a></li>
+
+                            </ul>
+                        </li>
+
+                    </ul>
+
+                </li>
+
+                {{-- <li class="">
 
                     <a class="has-arrow" href="#" aria-expanded="false">
 
@@ -94,11 +164,11 @@
 
                     </ul>
 
-                </li>
+                </li> --}}
 
 
 
-                <li class="">
+                {{-- <li class="">
 
                     <a class="has-arrow" href="#" aria-expanded="false">
 
@@ -120,9 +190,9 @@
 
                     </ul>
 
-                </li>
+                </li>--}}
 
-                <li class="">
+                {{-- <li class=""> 
 
                     <a class="has-arrow" href="#" aria-expanded="false">
 
@@ -144,7 +214,7 @@
 
                     </ul>
 
-                </li>
+                </li> --}}
 
 
 

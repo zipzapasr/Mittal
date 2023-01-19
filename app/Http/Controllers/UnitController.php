@@ -34,6 +34,10 @@ class UnitController extends Controller
     
     public function updateunit(Request $request ){
         $unit = Unit::findOrFail($request->id);
+        $request->validate([
+            'title' => "required|unique:unit,title,{$unit->id}"
+        ]);
+        
         $unit->update(['title' => $request->title]);
         Session::flash('message' , 'Unit Updated Successfully');
         return back();

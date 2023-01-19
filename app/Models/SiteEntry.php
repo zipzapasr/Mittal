@@ -27,7 +27,7 @@ class SiteEntry extends Model
         return $this->belongsTo(\App\Models\Contractor::class, 'contractor_id', 'id');
     }
 
-    public $status = [
+    public $statuses = [
         '0' => 'saved',
         '1' => 'submitted',
         '2' => 'verified'

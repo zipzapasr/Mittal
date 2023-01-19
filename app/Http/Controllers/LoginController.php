@@ -116,15 +116,16 @@ class LoginController extends Controller
             session(['godown' => null]);
         }
         if($user) {
-            $role = $user->role;
+            // $role = $user->role;
             
-            if($role == '3') {
-                return redirect()->route('login.project_manager');
-            } else if($role == '4'){
-                return redirect()->route('login.data_entry_operator');
-            } else if($role == '5') {
-                return redirect()->route('login.godown');
-            }
+            // if($role == '3') {
+            //     return redirect()->route('login.project_manager');
+            // } else if($role == '4'){
+            //     return redirect()->route('login.data_entry_operator');
+            // } else if($role == '5') {
+            //     return redirect()->route('login.godown');
+            // }
+            return redirect('/login');
         }
         
         return back();

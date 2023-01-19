@@ -21,7 +21,7 @@
                             @foreach($cementOuts as $cementOut)
                                 <tr>
                                     <th scope="row">
-                                        <div class="question_content">{{ $cementOut->date }}</div>
+                                        <div class="question_content">{{ date('d-m-Y', strtotime($cementOut->date)) }}</div>
                                     </th>
                                     <td>{{ $cementOut->bags }}</td>
                                     <td>{{ $cementOut->getFromSite->site_name }}</td>

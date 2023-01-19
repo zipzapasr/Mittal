@@ -32,8 +32,8 @@
 <div class="dashboard_header mb_50">
 <div class="row">
 <div class="col-lg-6">
-<div class="dashboard_header_title">
-<h3>Login As Data Entry Operator</h3>
+<div classf="dashboard_header_title">
+<h3>Login For Site Data Entry Operator</h3>
 </div>
 </div>
 </div>

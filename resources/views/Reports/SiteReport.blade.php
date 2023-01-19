@@ -16,7 +16,7 @@
 
             <div class="white_card_body">
 
-                <h2 style="padding: 20px 0px" id="siteName">Site Report</h2>
+                <h2 style="padding: 20px 0px" id="siteName">Progress Report w/o Petty Contractors</h2>
 
                 <h4>Filter</h4>
 
@@ -132,7 +132,7 @@
 
             $('.white_card_body').find('.mytable').html('');
 
-            $('.white_card_body').find('.mytable').html('<table id="table" class="table table-strip container"> <thead id="thead"> </thead> <tbody id="tbody"> </tbody> </table>')
+            $('.white_card_body').find('.mytable').html('<table id="table" class="table table-strip container cell-border compact"> <thead id="thead"> </thead> <tbody id="tbody"> </tbody> </table>')
 
 
 
@@ -157,7 +157,7 @@
                     },
 
                     success: function(res) {
-                        console.log(res)
+                        //console.log(res)
 
                         $('#thead').empty();
 
@@ -165,7 +165,7 @@
 
                         $('#siteName').empty();
 
-                        $('#siteName').append('Site Report: ' + '<span class="text-success">' + res.site_name + '</span>')
+                        $('#siteName').append('Progress Report w/o Petty Contractors: ' + '<span class="text-success">' + res.site_name + '</span>')
 
                         //console.log(res.data);
 
@@ -316,6 +316,12 @@
                                     'copy', 'csv', 'excel', 'pdf'
 
                                 ],
+                                columnDefs: [
+                                    {
+                                        targets: -1,
+                                        className: ['dt-body-center', 'dt-head-center']
+                                    }
+                                  ]
 
                             });
 

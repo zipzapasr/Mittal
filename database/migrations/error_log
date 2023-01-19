@@ -70,3 +70,203 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in /home/ripunaae/public_html/mittal/database/migrations/2022_11_28_181351_add_cement_bags_to_site_entries_table.php on line 7
+[14-Jan-2023 18:22:53 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/ripunaae/public_html/mittal/database/migrations/2014_10_12_000000_create_users_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/database/migrations/2014_10_12_000000_create_users_table.php on line 7
+[14-Jan-2023 18:22:53 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/ripunaae/public_html/mittal/database/migrations/2014_10_12_100000_create_password_resets_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/database/migrations/2014_10_12_100000_create_password_resets_table.php on line 7
+[14-Jan-2023 18:22:53 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/ripunaae/public_html/mittal/database/migrations/2019_08_19_000000_create_failed_jobs_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/database/migrations/2019_08_19_000000_create_failed_jobs_table.php on line 7
+[14-Jan-2023 18:22:53 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/ripunaae/public_html/mittal/database/migrations/2019_12_14_000001_create_personal_access_tokens_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/database/migrations/2019_12_14_000001_create_personal_access_tokens_table.php on line 7
+[14-Jan-2023 18:22:54 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/ripunaae/public_html/mittal/database/migrations/2022_09_09_060657_alter_user_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/database/migrations/2022_09_09_060657_alter_user_table.php on line 7
+[14-Jan-2023 18:22:54 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/ripunaae/public_html/mittal/database/migrations/2022_09_10_052834_create_site_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/database/migrations/2022_09_10_052834_create_site_table.php on line 7
+[14-Jan-2023 18:22:54 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/ripunaae/public_html/mittal/database/migrations/2022_09_10_063102_create_activity_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/database/migrations/2022_09_10_063102_create_activity_table.php on line 7
+[14-Jan-2023 18:22:54 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/ripunaae/public_html/mittal/database/migrations/2022_09_10_063115_create_unit_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/database/migrations/2022_09_10_063115_create_unit_table.php on line 7
+[14-Jan-2023 18:22:54 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/ripunaae/public_html/mittal/database/migrations/2022_09_26_105630_create_site_activity_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/database/migrations/2022_09_26_105630_create_site_activity_table.php on line 7
+[14-Jan-2023 18:22:54 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/ripunaae/public_html/mittal/database/migrations/2022_11_19_072652_create_activity_types_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/database/migrations/2022_11_19_072652_create_activity_types_table.php on line 7
+[14-Jan-2023 18:22:54 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/ripunaae/public_html/mittal/database/migrations/2022_09_26_110037_alter_site_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/database/migrations/2022_09_26_110037_alter_site_table.php on line 7
+[14-Jan-2023 18:22:55 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/ripunaae/public_html/mittal/database/migrations/2022_11_19_083706_alter_activity_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/database/migrations/2022_11_19_083706_alter_activity_table.php on line 7
+[14-Jan-2023 18:22:55 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/ripunaae/public_html/mittal/database/migrations/2022_11_21_051238_create_contractors_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/database/migrations/2022_11_21_051238_create_contractors_table.php on line 7
+[14-Jan-2023 18:22:55 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/ripunaae/public_html/mittal/database/migrations/2022_11_21_064606_create_cement_suppliers_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/database/migrations/2022_11_21_064606_create_cement_suppliers_table.php on line 7
+[14-Jan-2023 18:22:55 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/ripunaae/public_html/mittal/database/migrations/2022_11_21_080849_create_site_transfers_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/database/migrations/2022_11_21_080849_create_site_transfers_table.php on line 7
+[14-Jan-2023 18:22:55 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/ripunaae/public_html/mittal/database/migrations/2022_11_24_054249_alter_site_entries_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/database/migrations/2022_11_24_054249_alter_site_entries_table.php on line 7
+[14-Jan-2023 18:22:55 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/ripunaae/public_html/mittal/database/migrations/2022_11_24_045514_create_site_entries_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/database/migrations/2022_11_24_045514_create_site_entries_table.php on line 7
+[14-Jan-2023 18:22:56 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/ripunaae/public_html/mittal/database/migrations/2022_11_28_181351_add_cement_bags_to_site_entries_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/database/migrations/2022_11_28_181351_add_cement_bags_to_site_entries_table.php on line 7
+[14-Jan-2023 18:22:56 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/ripunaae/public_html/mittal/database/migrations/2022_11_24_060557_alter_site_entries_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/database/migrations/2022_11_24_060557_alter_site_entries_table.php on line 7
+[14-Jan-2023 18:22:56 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/ripunaae/public_html/mittal/database/migrations/2022_11_24_061826_alter_site_entries_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/database/migrations/2022_11_24_061826_alter_site_entries_table.php on line 7
+[14-Jan-2023 18:22:56 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/ripunaae/public_html/mittal/database/migrations/2022_11_29_135507_alter_cement_in_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/database/migrations/2022_11_29_135507_alter_cement_in_table.php on line 7
+[14-Jan-2023 18:22:56 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/ripunaae/public_html/mittal/database/migrations/2022_11_29_133655_create_cement_in_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/database/migrations/2022_11_29_133655_create_cement_in_table.php on line 7
+[14-Jan-2023 18:22:56 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/ripunaae/public_html/mittal/database/migrations/2022_11_30_155202_create_field_types_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/database/migrations/2022_11_30_155202_create_field_types_table.php on line 7
+[14-Jan-2023 18:22:57 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/ripunaae/public_html/mittal/database/migrations/2022_12_01_104516_add_field_type_id_to_site_entries_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/database/migrations/2022_12_01_104516_add_field_type_id_to_site_entries_table.php on line 7
+[14-Jan-2023 18:22:57 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/ripunaae/public_html/mittal/database/migrations/2022_12_05_153716_create_site_contractors_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/database/migrations/2022_12_05_153716_create_site_contractors_table.php on line 7
+[14-Jan-2023 18:22:57 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/ripunaae/public_html/mittal/database/migrations/2022_12_05_173514_add_contractor_id_to_site_entries_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/database/migrations/2022_12_05_173514_add_contractor_id_to_site_entries_table.php on line 7
+[14-Jan-2023 18:22:57 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/ripunaae/public_html/mittal/database/migrations/2022_12_01_125012_add_progress_date_to_site_entries_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/database/migrations/2022_12_01_125012_add_progress_date_to_site_entries_table.php on line 7
+[14-Jan-2023 18:22:57 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/ripunaae/public_html/mittal/database/migrations/2022_12_07_122631_add_raw_password_to_users_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/database/migrations/2022_12_07_122631_add_raw_password_to_users_table.php on line 7
+[14-Jan-2023 18:22:57 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/ripunaae/public_html/mittal/database/migrations/2022_12_12_110354_alter_cement_in_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/database/migrations/2022_12_12_110354_alter_cement_in_table.php on line 7
+[14-Jan-2023 18:22:57 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/ripunaae/public_html/mittal/database/migrations/2022_12_09_145600_create_admin_site_log_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/database/migrations/2022_12_09_145600_create_admin_site_log_table.php on line 7
+[14-Jan-2023 18:22:58 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/ripunaae/public_html/mittal/database/migrations/2022_12_12_115919_create_cement_in_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/database/migrations/2022_12_12_115919_create_cement_in_table.php on line 7
+[14-Jan-2023 18:22:58 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/ripunaae/public_html/mittal/database/migrations/2022_12_12_120004_create_cement_out_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/database/migrations/2022_12_12_120004_create_cement_out_table.php on line 7
+[14-Jan-2023 18:22:58 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/ripunaae/public_html/mittal/database/migrations/2022_12_12_125248_add_remark_to_cement_purchase_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/database/migrations/2022_12_12_125248_add_remark_to_cement_purchase_table.php on line 7
+[14-Jan-2023 18:22:58 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/ripunaae/public_html/mittal/database/migrations/2022_12_12_172125_alter_cement_purchase_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/database/migrations/2022_12_12_172125_alter_cement_purchase_table.php on line 7
+[14-Jan-2023 18:22:59 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/ripunaae/public_html/mittal/database/migrations/2022_12_12_172215_add_employee_id_to_cement_in_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/database/migrations/2022_12_12_172215_add_employee_id_to_cement_in_table.php on line 7
+[14-Jan-2023 18:22:59 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/ripunaae/public_html/mittal/database/migrations/2022_12_12_172438_add_employee_id_to_cement_out_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/database/migrations/2022_12_12_172438_add_employee_id_to_cement_out_table.php on line 7
+[14-Jan-2023 18:23:00 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/ripunaae/public_html/mittal/database/migrations/2022_12_14_105255_remove_raw_password_from_users_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/database/migrations/2022_12_14_105255_remove_raw_password_from_users_table.php on line 7
+[14-Jan-2023 18:23:00 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/ripunaae/public_html/mittal/database/migrations/2022_12_15_150538_create_cement_transfer_to_client_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/database/migrations/2022_12_15_150538_create_cement_transfer_to_client_table.php on line 7
+[14-Jan-2023 18:23:00 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/ripunaae/public_html/mittal/database/migrations/2022_12_15_161845_add_employee_id_to_cement_transfer_to_client_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/database/migrations/2022_12_15_161845_add_employee_id_to_cement_transfer_to_client_table.php on line 7
+[14-Jan-2023 18:23:00 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/ripunaae/public_html/mittal/database/migrations/2022_12_19_122320_add_wastage_to_site_entries_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/database/migrations/2022_12_19_122320_add_wastage_to_site_entries_table.php on line 7
+[14-Jan-2023 18:23:01 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/ripunaae/public_html/mittal/database/migrations/2022_12_22_132956_create_edit_accesses_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/database/migrations/2022_12_22_132956_create_edit_accesses_table.php on line 7
+[14-Jan-2023 18:23:01 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/ripunaae/public_html/mittal/database/migrations/2023_01_02_132307_alter_admin_site_log_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/database/migrations/2023_01_02_132307_alter_admin_site_log_table.php on line 7
+[14-Jan-2023 18:23:01 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/ripunaae/public_html/mittal/database/migrations/2023_01_02_171507_add_date_to_admin_site_log_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/database/migrations/2023_01_02_171507_add_date_to_admin_site_log_table.php on line 7
+[17-Jan-2023 17:20:39 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/ripunaae/public_html/mittal/database/migrations/2022_11_24_060557_alter_site_entries_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/database/migrations/2022_11_24_060557_alter_site_entries_table.php on line 7
+[17-Jan-2023 17:26:26 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/ripunaae/public_html/mittal/database/migrations/2022_11_24_061826_alter_site_entries_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/database/migrations/2022_11_24_061826_alter_site_entries_table.php on line 7
+[17-Jan-2023 17:36:35 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/ripunaae/public_html/mittal/database/migrations/2022_11_29_133655_create_cement_in_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/database/migrations/2022_11_29_133655_create_cement_in_table.php on line 7
+[17-Jan-2023 17:58:10 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/ripunaae/public_html/mittal/database/migrations/2022_11_29_135507_alter_cement_in_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/database/migrations/2022_11_29_135507_alter_cement_in_table.php on line 7
+[17-Jan-2023 18:44:16 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/ripunaae/public_html/mittal/database/migrations/2022_12_12_110354_alter_cement_in_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/database/migrations/2022_12_12_110354_alter_cement_in_table.php on line 7
+[17-Jan-2023 20:13:16 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/ripunaae/public_html/mittal/database/migrations/2022_12_12_115919_create_cement_in_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/database/migrations/2022_12_12_115919_create_cement_in_table.php on line 7
+[18-Jan-2023 12:29:00 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/ripunaae/public_html/mittal/database/migrations/2022_12_12_120004_create_cement_out_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/database/migrations/2022_12_12_120004_create_cement_out_table.php on line 7

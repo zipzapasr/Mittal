@@ -1,0 +1,16 @@
+[14-Jan-2023 18:35:17 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Http\FormRequest" not found in /home/ripunaae/public_html/mittal/app/Http/Requests/CementOutRequest.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/app/Http/Requests/CementOutRequest.php on line 7
+[14-Jan-2023 18:35:17 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Http\FormRequest" not found in /home/ripunaae/public_html/mittal/app/Http/Requests/CementInRequest.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/app/Http/Requests/CementInRequest.php on line 7
+[14-Jan-2023 18:35:17 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Http\FormRequest" not found in /home/ripunaae/public_html/mittal/app/Http/Requests/CementPurchaseRequest.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/app/Http/Requests/CementPurchaseRequest.php on line 7
+[14-Jan-2023 18:35:17 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Http\FormRequest" not found in /home/ripunaae/public_html/mittal/app/Http/Requests/ContractorRequest.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ripunaae/public_html/mittal/app/Http/Requests/ContractorRequest.php on line 7

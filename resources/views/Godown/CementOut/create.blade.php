@@ -15,7 +15,7 @@
 
                     <h4 style="padding: 20px 0px" >Cement Out Form</h4>
 
-                    <form method="POST" action="{{ route('store.godown.cementOut', ['user' => $user]) }}" class="col-md-6">
+                    <form method="POST" action="{{ route('store.godown.cementOut') }}" class="col-md-6">
 
                         @csrf
 
@@ -73,13 +73,13 @@
 
                                 <div class="main-title">
 
-                                    <h3 class="m-0">Num. of Bags</h3>
+                                    <h3 class="m-0">Number of Bags</h3>
 
                                 </div>
 
                                 <div class=" mb-0">
 
-                                    <input type="number" min="0" class="form-control" name="bags" value="{{ old('bags') ?? 0 }}" id="bags" placeholder="Num. of Bags" required>
+                                    <input type="number" min="0" class="form-control" name="bags" value="{{ old('bags') ?? 0 }}" id="bags" placeholder="Number of Bags" required>
 
                                 </div>
 

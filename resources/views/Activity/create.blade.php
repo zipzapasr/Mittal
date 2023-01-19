@@ -19,7 +19,7 @@
 
                             @csrf
 
-                            <div class="row-container">
+                            <div class="row container">
                                 <div class="mb_30 col-md-2 floatLeft">
                                     <label style="width: 100%" for="">
                                         <div class="main-title">
@@ -79,7 +79,7 @@
                                 </div>
                             </div>
 
-                            <div class="row-container">
+                            <div class="row container">
                                 <div class="mb_30 col-md-2 floatLeft">
                                     <label style="width: 100%" for="">
                                         <div class="main-title">
@@ -139,7 +139,7 @@
                                 </div>
                             </div>
 
-                            <div class="row-container">
+                            <div class="row container">
                                 <div class="mb_30 col-md-2 floatLeft">
                                     <label style="width: 100%" for="">
                                         <div class="main-title">
@@ -199,7 +199,7 @@
                                 </div>
                             </div>
 
-                            <div class="row-container">
+                            <div class="row container">
                                 <div class="mb_30 col-md-2 floatLeft">
                                     <label style="width: 100%" for="">
                                         <div class="main-title">
@@ -258,7 +258,7 @@
                                 </div>
                             </div>
 
-                            <div class="row-container">
+                            <div class="row container">
                                 <div class="mb_30 col-md-2 floatLeft">
                                     <label style="width: 100%" for="">
                                         <div class="main-title">
